@@ -2,7 +2,7 @@
  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213209"> <member name="def-planList" type="list" link="plan.bc"/> </basis>
 <basis core="dbsource" source="media" name="db" lid="1" catid="2277" > <member type="list" name="rightmanshoor" perpage="10" pageno="1"/> </basis>
 
-<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213251"> <member name="def-manshoor" type="list" propertyid="7244" link="manshoor.bc" /> </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213954"> <member name="def-manshoor" type="list" typeid="159" link="emkanat.bc" /> </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2373363"> <member name="def-quran" type="view"/> </basis>
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2373363"> <member name="def-sec3" type="list"/> </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213213"> <member name="def-event" type="list" size="314x238" propertyid="7244,7249" postsql=" select *, SUBSTR(prp_7244, 1,230-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 230)))) || '...' as substr from [db.def-event]" link="event.bc"/> </basis>
@@ -30,8 +30,8 @@
         <basis core="call" file="header.inc" />
         <basis core="call" file="side-content.inc" />
 
-        <section class="section1 mb-[146px] h-svh gap-x-10 flex items-center justify-end">
-            <div class="rightSection w-[34%] pr-[5%] max-w-[415px]">
+        <section class="section1 mb-[146px] gap-x-10 flex items-center justify-end">
+            <div class="rightSection w-[41%] pr-[5%] max-w-[415px]">
                 <h1 class="font-Kohinoor600 text-lg mb-8">
                     مسجد جامع همت
                 </h1>
@@ -68,17 +68,17 @@
                     </div>
                 </div>
             </div>
-            <div class="leftSection w-[66%] h-full" dir="ltr">
+            <div class="leftSection w-[58%] h-full" dir="ltr">
                 <div class="research-inner-2">
                      <div dir="rtl" class="research-list !bg-cover hover:!bg-[length:135vw] bg-center" style="background: url([##cms.cms.cdn##]/images/def-tarhejame.png);">
                         <div class="research-list-img">
                             <div class="research-list-overlay">
 
                                 <h5 class="font-Kohinoor600 text-lg text-white mb-5">
-                                    طرح جامع مسجد
+                                  امکانات
                                 </h5>
                              
-                                <a class="flex items-center gap-x-1.5 mt-5" href="/tarhejame-masjed.bc">
+                                <a class="flex items-center gap-x-1.5 mt-5" href="/امکانات">
                                     <span class="font-Kohinoor400 text-sm text-white">
                                         بیشتر
                                     </span>
@@ -107,7 +107,7 @@
                                             <face>
                                                 <a href="/@link" class="banner-box w-[130px] min-h-[153px] rounded-[16px] border border-white flex flex-col items-center justify-center px-2">
                                                     <div class="imgS mb-4">
-                                                        <img class="w-[36px] grayscale-100" src="[##cms.cms.cdn##]/@image" alt="@name">
+                                                        <img class="w-[36px] grayscale-100" src="[##cms.cms.cdn##]/@image" alt="@title">
                                                     </div>
                                                     <span class="font-Kohinoor500 text-sm text-white text-center">
                                                        @title
@@ -141,10 +141,10 @@
                             <div class="research-list-overlay">
 
                                 <h5 class="font-Kohinoor600 text-lg text-white mb-5">
-                                    دیاگرام روابط فضایی
+                                    تاریخچه مسجد
                                 </h5>
                               
-                                <a class="flex items-center gap-x-1.5 mt-5" href="/diagram.bc">
+                                <a class="flex items-center gap-x-1.5 mt-5" href="/history.bc">
                                     <span class="font-Kohinoor400 text-sm text-white">
                                         بیشتر
                                     </span>
@@ -169,28 +169,29 @@
                 <basis core="print" datamembername="db.rightmanshoor">
                    
                     <face>
-                        <a href="/manshoor.bc" class="relative block rounded-[18px] h-full overflow-hidden after:absolute after:inset-0 after:bg-gradient-to-r after:from-black/[0.0] after:to-black/[0.55] shadow-[0px_9px_15.6px_1px_#F1F1F1]">
+                        <a href="/امکانات" class="relative block rounded-[18px] h-full overflow-hidden after:absolute after:inset-0 after:bg-gradient-to-r after:from-black/[0.0] after:to-black/[0.55] shadow-[0px_9px_15.6px_1px_#F1F1F1]">
                             <div class="imgS h-full">
         
-                                <img class="h-full object-cover w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@title">
+                                <img class="h-full object-cover w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
                             </div>
                             <div class="overD absolute inset-0 w-full h-full py-9 px-8 z-1 flex flex-col justify-between">
                                 <div class="imgS bg-white rounded-full aspect-square px-4 py-6 w-fit">
-                                    <img src="[##cms.cms.cdn##]/images/manshorIcon.png" alt="@name">
+                                    <img src="[##cms.cms.cdn##]/images/manshorIcon.png" alt=" امکانات مسجد جامع همت تجریش">
                                 </div>
         
                                 <div class="titles">
                                     <h2 class="font-Kohinoor600 text-lg mb-5 text-gray-light">
-                                      @name
+                                      
+ امکانات مسجد جامع همت تجریش
+ 
                                     </h2>
         
                                     <div
                                         class="flex items-center justify-center gap-x-1.5 w-[218px] h-[49px] bg-gold-pr border border-white">
                                         <span class="font-Kohinoor400 text-sm text-white">
-                                            مشاهده کامل منشور
+                                            مشاهده کامل امکانات
                                         </span>
-                                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9 1L5 4.5L9 8" stroke="white" />
                                             <path d="M5 1L1 4.5L5 8" stroke="white" />
                                         </svg>
@@ -212,7 +213,7 @@
                             <div
                                 class="imgS mb-8 p-4 w-fit aspect-square rounded-full bg-gold-pr/[0.25] max-w-[109px] duration-500 group-hover/mBox:bg-topHeader">
                                 <img class="group-hover/mBox:invert-100 group-hover/mBox:brightness-0 duration-500"
-                                    src="[##cms.cms.cdn##]/@image" alt="@title">
+                                    src="[##cms.cms.cdn##]/@type_159" alt="@title">
                             </div>
                             <div class="titles">
                                 <span
@@ -220,7 +221,7 @@
                                     @title
                                 </span>
                                 <h3 class="font-Kohinoor500 text-lg mb-6 group-hover/mBox:text-white duration-500">
-                                   @prp_7244
+                                 
                                 </h3>
                                 <a href="/@link"
                                     class="font-Kohinoor400 items-center gap-x-1.5 text-gold-pr flex text-sm group-hover/mBox:text-white duration-500">
@@ -395,7 +396,7 @@
                                 <div class="imgS h-[314px]">
                                     <img class="w-fit object-cover h-full" src="[##cms.cms.cdn##]/images/def-sima.jpg" alt="simaye-masjed">
                                 </div>
-                                <div class="title flex px-5 py-4 justify-between bg-white">
+                                <div class="title flex-wrap flex px-5 py-4 justify-between bg-white">
                                     <h5 class="font-Kohinoor500 text-base">
                                         سیمای مسجد 
                                     </h5>
@@ -416,7 +417,7 @@
 
                                     <img class="w-fit object-cover h-full" src="[##cms.cms.cdn##]/images/def-event.jpg" alt="event">
                                 </div>
-                                <div class="title flex px-5 py-4 justify-between bg-white">
+                                <div class="title flex-wrap flex px-5 py-4 justify-between bg-white">
                                     <h5 class="font-Kohinoor500 text-base">
                                         رویدادها
                                     </h5>

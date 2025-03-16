@@ -721,3 +721,12 @@ input[type="range"]:hover::-moz-range-thumb {
 .errorPlaceholder::placeholder {
   color: #f10000;
 }
+
+
+
+
+@media only screen and (max-width: 1400px) {
+.errorPage{
+  margin-top: 10vh;
+}
+}

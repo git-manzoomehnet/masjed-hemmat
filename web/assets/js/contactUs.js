@@ -65,6 +65,12 @@ function onSource1(args) {
       let questions = document.querySelectorAll(
         ".homeForm1 div[data-bc-question]"
       );
+
+
+
+
+
+
       setTimeout(() => {
 
 
@@ -132,6 +138,37 @@ function onSource1(args) {
      captchaInput = document.querySelector(".captchaContainerclass .codeinputm")
      captchaContainerclass = document.querySelector(".captchaContainerclass")
     loaderContainer.style.display = "none";
+
+
+
+
+
+    let questions = document.querySelectorAll(
+      ".homeForm1 div[data-bc-question]"
+    );
+
+
+
+    questions.forEach((element) => {
+      element.classList.add("afterStar");
+
+      let qInput = element.querySelector(".homeForm1 input");
+      let qTxtArea = element.querySelector(".homeForm1 textarea");
+    
+      let title = element.querySelector(".homeForm1 [data-bc-question-title]");
+
+      if (title) {
+         title = element.querySelector(
+            ".homeForm1 [data-bc-question-title]"
+         ).innerHTML;
+         if (qInput) {
+            qInput.setAttribute("aria-label", title);
+         } else if (qTxtArea) {
+            qTxtArea.setAttribute("aria-label", title);
+         }
+      }
+    
+   });
 
   }
   

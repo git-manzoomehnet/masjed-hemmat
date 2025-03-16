@@ -56,33 +56,72 @@
 
                 <div class="flex mb-28 flex-wrap mt-16 gap-x-10 gap-y-7 w-90p mx-auto justify-center">
 
-                    <basis core="print" datamembername="db.list-manshoor">
+<basis core="repeater" name="rep" datamembername="db.list-manshoor">
+
+    <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##rep.current.id##]">
+         <member name="manshoor" type="view"/> 
+        </basis>	
+
+                    <basis core="print" datamembername="rep.current">
                       
                         <face>
-                            <div data-topFace="@id" class="filterBox filterBtn w-[130px] group/filterBox p-4 rounded-2xl border border-gold-pr text-center cursor-pointer hover:bg-gold-pr [&.activeFilterBtn]:bg-gold-pr duration-1000 ">
+                            <div class="ss-br rounded-2xl border border-gold-pr ssf">
+                            <div data-topFace="@id" class=" filterBox flex filterBtn w-full group/filterBox p-4 rounded-2xl   text-center cursor-pointer hover:bg-gold-pr [&.activeFilterBtn]:bg-gold-pr duration-1000 ">
                                 <div class="imgS flex items-center justify-center">
                                     <img class="group-hover/filterBox:brightness-0 group-hover/filterBox:invert-100 group-[&.activeFilterBtn]/filterBox:brightness-0 group-[&.activeFilterBtn]/filterBox:invert-100 duration-1000 " src="[##cms.cms.cdn##]/@type_159" alt="@title">
                                 </div>
-                                <span class="block mt-4 font-Kohinoor500 text-sm text-gold-pr mb-1 group-hover/filterBox:text-white group-[&.activeFilterBtn]/filterBox:text-white duration-1000">
+                                <span class="block font-Kohinoor500 text-sm text-gold-pr  group-hover/filterBox:text-white group-[&.activeFilterBtn]/filterBox:text-white duration-1000">
                                 @title
                                 </span>
                                 <p class="font-Kohinoor500 text-sm text-gold-pr group-hover/filterBox:text-white group-[&.activeFilterBtn]/filterBox:text-white duration-1000">
                                     @prp_7244
                                 </p>
                             </div>
-                         
-                            
+                         </face>
+                         </basis>
+                            <div class="texbox max-w-[695px] mx-auto p-4 ">
+                                <div class="titleBox mb-8 text-right">
+                                    <basis core="print" datamembername="db.manshoor">
+                                        
+                                        <face filter="TypeID=129">
+                                               <h3 class="font-Kohinoor600 text-base text-right mb-1  flex ">
+                                               @Answer :
+                                            </h3>
+                                           </face>
+                                       </basis>
+                                   <basis core="print" datamembername="db.manshoor">
+                                      
+                                       <face filter="TypeID=128">
+                                           
+                                           <span class="font-Kohinoor400 text-base text-gray-matn">
+                                            @Answer
+                                           </span>
+                                       </face>
+                                   </basis>
+                               </div>
+                               <div class="descBox text-right ">
+                                <basis core="print" datamembername="db.manshoor">
+                                   
+                                    <face filter="TypeID=250">
+                                        <span class="font-Kohinoor600 text-base mb-1">
+                                            @text
+                                        </span>
+                                        <div class="para leading-[35px] font-Kohinoor400 text-base text-gray-matn">
+                                           @largetext
+                                        </div>
+                                        
+                                    </face>
+                                </basis>
+                               </div>
+                               <basis core="print" datamembername="rep.current">
+                      
+                                <face>
+                            </div>
                         </face>
                     </basis>
-            </div>
-            <div class="manshoorContainer mb-24 py-16 shadow-[4px_4px_15.6px_1px_#F1F1F1] w-90p mx-auto">
-
-
-               <basis pageindex="[##cms.cms.pageindex##]" run="atclient" core="call" file="load-manshoor.inc?id={##cms.dataFace.value##}"
-               triggers="cms.dataFace"  />
-
-
-
+                </div>
+                </basis>
+         
             </div>
 
         </section>
@@ -95,6 +134,15 @@
 
     <script src="[##cms.cms.cdn##]/_js/basiscore-2.30.1.min.js"></script>
     <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]"/>
-    <script src="[##cms.cms.cdn##]/js/manshoor.js"></script>
+    <!-- <script src="[##cms.cms.cdn##]/js/manshoor.js"></script> -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+  
+ $('.ssf').click(function() {
+     $(this).addClass("activeFilter")
+    });
+  </script>
+
+
 </body>
 </html>
