@@ -1,0 +1,121 @@
+<basis core="dbsource" source="media" name="db" lid="1" catid="2266" > <member type="list" name="diagram" perpage="10" order="desc" pageno="1"/> </basis>
+
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دیاگرام</title>
+    <meta name="description" content="دیاگرام مسجد همت تجریش">
+    <basis core="call" file="styles.inc" />
+</head>
+
+<body>
+    <main class="diagram" dir="rtl">
+        <basis core="call" file="header.inc" />
+        <basis core="call" file="side-content.inc" />
+
+        <section class="section1">
+            <div class="imgS h-[690px]">
+                <img src="[##cms.cms.cdn##]/images/banner-diagram.jpg" alt="دیاگرام" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <div class="breadCrumb w-90p mx-auto mt-4">
+            <ul class="flex items-center py-5 gap-x-2.5">
+                <li class="flex items-center gap-x-2.5">
+                    <a href="/" class="flex items-center gap-x-4">
+                        <img src="[##cms.cms.cdn##]/images/home.svg" alt="home">
+                        <span class="font-Kohinoor400 text-sm text-grayn">
+                            صفحه نخست
+                        </span>
+                    </a>
+                    <img src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="">
+                </li>
+                <li>
+                    <span class="font-Kohinoor400 text-sm text-grayn">
+                        دیاگرام روابط فضایی
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <basis core="print" datamembername="db.diagram">
+          
+            <face filter="RowNumber=2">
+                <section class="section2 w-90p mx-auto mb-[160px]">
+                    <div class="mainTitle flex items-center justify-center mt-2 relative">
+                        <img src="[##cms.cms.cdn##]/images/bgTitle.png" alt="background title">
+        
+                        <h1 class="absolute font-Kohinoor600 z-1 text-xl">
+                          @name
+                        </h1>
+                    </div>
+        
+        
+        
+                    <div class="imgS mt-4 shadow-[0px_9px_15.6px_1px_#F1F1F1] ">
+                        <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                    </div>
+        
+                </section>
+                
+            </face>
+        </basis>
+        <basis core="print" datamembername="db.diagram">
+          
+            <face filter="RowNumber=1">
+        <section class="section3 pb-2 w-90p mx-auto mb-12">
+            <div class="mainTitle flex items-center justify-center mt-2 relative">
+                <img src="[##cms.cms.cdn##]/images/bgDiagram.png" alt="background title">
+
+                <h2 class="absolute font-Kohinoor600 z-1 text-xl text-greenblue">
+                    @name
+
+                </h2>
+            </div>
+
+
+
+            <div class="imgS mt-4 shadow-[0px_9px_15.6px_1px_#F1F1F1] ">
+                <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+            </div>
+
+        </section>
+
+            </face>
+        </basis>
+        <basis core="print" datamembername="db.diagram">
+          
+            <face filter="RowNumber>2">
+        <section class="section3 pb-2 w-90p mx-auto mb-12">
+            <div class="mainTitle flex items-center justify-center mt-2 relative">
+                <img src="[##cms.cms.cdn##]/images/bgDiagram.png" alt="background title">
+
+                <h2 class="absolute font-Kohinoor600 z-1 text-xl text-greenblue">
+                    @name
+
+                </h2>
+            </div>
+
+
+
+            <div class="imgS mt-4 shadow-[0px_9px_15.6px_1px_#F1F1F1] ">
+                <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+            </div>
+
+        </section>
+
+            </face>
+        </basis>
+        <basis core="call" file="footer.inc" />
+
+    </main>
+
+    <basis core="call" file="scripts.inc" />
+
+</body>
+
+</html>

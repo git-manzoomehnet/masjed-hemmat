@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با ما</title>
+<meta name="description" content="تماس با ما مسجد همت تجریش">
+<link rel="stylesheet" href="assets/css/outputDesktop.css">
+</head>
+<body>
+    <main class="contactUs" dir="rtl">
+        <section class="section1">
+            <div class="imgS">
+                <img src="assets/images/banner.jpg" alt="@name" class="w-full">
+            </div>
+        </section>
+
+        <div class="breadCrumb w-90p mx-auto mt-4">
+            <ul class="flex items-center py-5 gap-x-2.5">
+                <li class="flex items-center gap-x-2.5">
+                    <a href="/" class="flex items-center gap-x-4">
+                        <img src="assets/images/home.svg" alt="home">
+                        <span class="font-Kohinoor400 text-sm text-grayn">
+                            صفحه نخست
+                        </span>
+                    </a>
+                    <img src="assets/images/bread-seperator.svg" alt="">
+                </li>
+                <li>
+                        <span class="font-Kohinoor400 text-sm text-grayn">
+                            تماس با ما
+                        </span>
+                </li>
+            </ul>
+        </div>
+
+        <section class="section2 w-90p mx-auto">
+            <div class="mainTitle flex items-center justify-center mt-2 relative mb-11">
+                <img src="assets/images/bgTitle.png" alt="background title">
+
+                <h1 class="absolute font-Kohinoor600 z-1 text-xl">
+                    تماس با ما
+                </h1>
+            </div>
+
+            <div class="contactSection rounded-[50px] border border-gold-pr overflow-hidden flex">
+                <div class="rightSection w-[41%] bg-gray-light py-10 flex items-center justify-center" >
+                    <div class="inner max-w-[338px]">
+
+                        <h2 class="font-Kohinoor600 text-lg mb-12">
+                            راه های ارتباطی
+                        </h2>
+
+                        <div class="phone">
+                            <ul>
+                                <li class="flex items-center gap-x-2.5 mb-11"> 
+                                    <img src="assets/images/phoneContactUs.svg" alt="phone">
+                                    <span class="font-IRANSansWebFaNum400 text-base">
+                                        021 - 77889977
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="address">
+                            <ul>
+                                <li class="flex items-center gap-x-2.5 mb-11"> 
+                                    <img src="assets/images/locationContactUs.png" alt="phone">
+                                    <span class="font-Kohinoor400 text-base">
+                                        021 - 77889977
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mails">
+                            <ul>
+                                <li class="flex items-center gap-x-2.5 mb-11"> 
+                                    <img src="assets/images/mailContactUs.svg" alt="phone">
+                                    <a href="mailto" class="font-Kohinoor400 text-base">
+                                        021 - 77889977
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="socials">
+                            
+                            <ul class="flex gap-x-2.5 items-center">
+                                <li class="flex items-center gap-x-4">
+                                    <a href="" title="telegram">
+                                        <img src="assets/images/telegramContact.svg" alt="telegram">
+                                    </a>
+                                </li>
+                                <li class="flex items-center gap-x-4">
+                                    <a href="" title="telegram">
+                                        <img src="assets/images/youtubeContactUs.svg" alt="youtube">
+                                    </a>
+                                </li>
+                                <li class="flex items-center gap-x-4">
+                                    <a href="" title="telegram">
+                                        <img src="assets/images/instagramContactUs.svg" alt="instagram">
+                                    </a>
+                                </li>
+                                <li class="flex items-center gap-x-4">
+                                    <a href="" title="telegram">
+                                        <img src="assets/images/facebookContactUs.svg" alt="facebook">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="leftSection w-[49%] pr-16 pl-10 py-10 flex flex-col justify-between">
+                    <h3 class="font-Kohinoor600 text-lg mb-6">
+                        فرم ارتباط با ما
+                    </h3>
+
+                    <div class="formContainer relative">
+                        <div class="loaderContainer absolute flex items-center justify-center inset-0 bg-white/[0.6]">
+                           <div class="loader"></div> 
+                        </div>
+                        <form name="myForm" class="homeForm1" action="" onsubmit="return validateForm()" method="post">
+                            <basis core="schema" run="atclient"
+                                schemaUrl="/schema/domainform/C30901D4-E151-4A17-838B-1121DEDBE915/75D56E7A-90F7-4D96-B7A1-F80E8436445B/fa/فرم-درخواست-محصول"
+                                displayMode="new" button="[data-btn-add1]" resultSourceId="demo.data1" onRendered="renderFn1">
+                            </basis>
+                            <basis core="callback" run="AtClient" triggers="demo.data1" method="onSource1"></basis>
+                            <basis core="api" url="/schema/domainform/C30901D4-E151-4A17-838B-1121DEDBE915/fa/editobject"
+                                method="post" run="atclient"
+                                body="object_edit={##edit.object1.value##}&captcha={##edit.object1.captcha##}&captchaid={##edit.object1.captchaid##}"
+                                content-type="application/x-www-form-urlencoded" triggers="edit.object1" if="{##edit.object1##}"
+                                OnProcessed="OnProcessedEditObject1" onRendered="renderEditobject">
+                            </basis>
+                            <div data-bc-question="" class="qclass8 w-fit hidden" style="width: 100%;">
+                                <div class="responsMsg1 responsMsg">
+                                    <span>فرم با موفقیت ثبت شد.</span>
+                                </div>
+                                <div id="requestBox" class="captchaContainerclass captcha-sefaresh2" style="margin-bottom: 20px"
+                                    data-bc-answer-container="" data-bc-schema-info-multi="0" data-bc-schema-info-word="58"
+                                    data-bc-schema-info-part="1" data-bc-schema-info-part-0-type="text">
+                                    <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1"
+                                        run="atclient">
+                                        <member name="code1" type="scalar" request="captcha"></member>
+                                    </basis>
+                                    <basis datamembername="captcha1.code1" core="print" run="atclient">
+                                        <face>
+                                            <script type="text/template">
+        
+                                    <span class="captcha-sefaresh">
+                                        <img src="/@captcha@" alt="captcha" width="88" height="44" class="captcha-sefaresh"
+                                        title="captcha" />
+                                    <input type="hidden" name="captchaid" aria-label="captcha" value="@captcha@" />
+                                </span>
+                            <img src="[##cms.cms.cdn##]/images/cached.png" alt="refressh" class="refressh cursor-pointer refressh1" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+                            <input type="text" class="codeinputm" name="captcha" aria-label="captcha2" />
+                            </script>
+                                        </face>
+                                    </basis>
+                                </div>
+                                <button class="flex bg-light_gray w-full items-center justify-center py-2.5 font-IRANSans400 text-sm text-dark_gray rounded-[29px] border border-main"
+                                    type="submit" data-btn-add1 data-btn-submit="">
+                                    <span class="font-IRANSansWeb400 text-sm text-nWhite"> ثبت</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="section3">
+            <div class="mainTitle flex items-center justify-center mt-14 relative">
+                <img src="assets/images/bgTitle.png" alt="background title">
+
+                <h1 class="absolute font-Kohinoor600 z-1 text-xl">
+                    مسیرهای مسجد
+                </h1>
+            </div>
+
+
+            <div class="mapsContainer">
+                <div class="mapBox pb-7 border-b border-b-gold-pr mb-20">
+                    <span class="font-Kohinoor600 text-lg block mb-4">
+                        مسیر دسترسی از شمال تهران:
+                    </span>
+                    <div class="para font-Kohinoor400 text-sm mb-6">
+                        <p>
+                            از طریق خیابان ولیعصر به سمت میدان تجریش حرکت کنید. پارکینگ‌های عمومی اطراف میدان تجریش برای پارک خودرو در دسترس هستند.
+                        </p>
+                    </div>
+
+                    <div class="imgS">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2373451"> 
+    <member name="history" type="view"/>
+    <member name="history250" postsql="select * from [db.history250] where TYPEID=250" type="view"/>
+     </basis>	
+    
+    <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2373451">
+     <member name="image-list" type="list" format="4"  postsql="select * from [db.image-list] where ord between 50 and 100  " ></member>
+    </basis>
+    
+      <basis core="inlinesource" name="list">
+        <member name="star" lefttblcol="db.history250.RowNumber" righttblcol="db.image-list.RowNumber" format="join" jointype="leftjoin" />
+      </basis>
+      <basis core="dbsource" source="media" name="basisName" lid="1" catid="2297"> <member type="list" name="banner-history-mobile" perpage="10" pageno="1"  /> </basis>
+
+      <basis core="dbsource" source="media" name="basisName" lid="1" catid="2295">
+         <member type="list" name="banner-history" perpage="10" pageno="1" /> </basis>	
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تاریخچه</title>
+    <meta name="description" content="تاریخچه مسجد جامع همت">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]"/>
+</head>
+
+<body>
+    <main class="historyMain" dir="rtl">
+        <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]"/>
+
+
+        <section class="section1">
+            <div class="imgS">
+                <basis core="print" datamembername="basisName.banner-history-mobile">
+                    <face>
+                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" class="w-full">
+                    </face>
+                </basis>
+            </div>
+        </section>
+
+  
+        <div class="breadCrumb w-90p mx-auto mt-4 py-5">
+            <a href="/" class="">
+                <img class="inline w-[21px]" src="[##cms.cms.cdn##]/images/home.svg" alt="home">
+                <span class="font-Kohinoor400 text-[10px] inline text-grayn">
+                    صفحه نخست
+                </span>
+            </a>
+            <img class="inline mx-2 w-[3px]" src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="seperator">
+            <span class="font-Kohinoor400 inline text-[10px] text-grayn">
+                درباره مسجد
+            </span>
+            
+            <img class="inline mx-2 w-[3px]" src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="seperator">
+                    <span class="font-Kohinoor400 inline text-[10px] text-grayn">
+                        طرح جامع مسجد
+                    </span>
+        </div>
+
+        <section class="section2 mb-12">
+            <div class="mainTitle mt-2 relative mb-6">
+                <img class="mb-1 mx-auto" src="[##cms.cms.cdn##]/images/bgTitle-mobile.png" alt="background title">
+
+                <h1 class="text-center font-Kohinoor500 z-1 text-lg">
+                    تاریخچه مسجد جامع همت
+                </h1>
+            </div>
+            <div class="timeline Time-lineC module--margin is--scrollable mt-16" data-timeline="root">
+                <div class="timeline__wrapper">
+                    <div class="timeline__inner">
+                        <div class="timeline__head">
+                            <h3 class="headline--small"></h3>
+                            <p class="copy"></p>
+                        </div>
+
+
+                        <div class="timeline__map-wrapper">
+                            <div class="timeline__map" data-timeline="activeYears">
+
+                                <basis core="print" datamembername="db.history250">
+                                  
+                                    <face>
+                                        <div class="timeline__entry">
+                                            <span data-timeline="activeYear" data-timeline-active-year="@text" class=" font-IRANSansWebFaNum300 text-sm text-b1">@text</span>
+                                        </div>
+                                        
+                                    </face>
+                                </basis>
+                              
+                               
+                            </div>
+                            <div class="timeline__line"></div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="topSlider mt-7 flex gap-x-11 relative ">
+                <div class="swiper pb-[64px] w-full py-8 relative  !pt-9 textSlider">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                      <!-- Slides -->
+
+
+                      <basis core="print" datamembername="list.star">
+                        
+                          <face>
+                              <div class="swiper-slide">
+                                <div class="">
+                                    <div class="imgS -mb-[65px] flex items-center justify-end">
+                                        <img class=" rounded-tr-lg rounded-br-lg overflow-hidden" src="[##cms.cms.cdn##]/@db.image-list.largeIMG" alt="@name">
+                                    </div>
+                                    <div class="textContainer w-[92%] pt-[75px] pb-12 relative after:h-full after:inset-0 after:absolute after:bg-topHeader after:rounded-tl-lg after:rounded-bl-lg after:-z-10 after:w-full">
+                                        <div class="inner w-90p mx-auto">
+
+                                            <h2 class="font-IRANSansWebFaNum500 w-fit text-lg text-b1 pb-1 mb-2.5 border-b border-b-gray-light">
+                                                سال @db.history250.text
+                                            </h2>
+                                            
+                                            <div class="para font-Kohinoor500 text-sm leading-[24px] text-justify text-gray-matn">
+                                                
+                                                @db.history250.largetext	
+                                            </div>
+                                        </div>  
+                                        </div>
+                                      
+                                </div>    
+                              </div>
+                              
+                          </face>
+                      </basis>
+                     
+                    
+                     
+                    </div>
+                    <div class="btns absolute0 relative -translate-y-[100%] bottom-0 z-1 mb-5 flex gap-x-1 w-full justify-center">
+                        <div class="prevText cursor-pointer">
+                            <img class="w-[64px]" src="[##cms.cms.cdn##]/images/prevTextHistory.svg" alt="prevTextHistory">
+                        </div>
+                        <div class="nextText cursor-pointer">
+                            <img class="w-[64px]" src="[##cms.cms.cdn##]/images/nextTextHistory.svg" alt="nextTextHistory">
+                        </div>
+                    </div>
+                  
+                  </div>
+
+              
+            </div>
+
+
+          
+        </section>
+
+
+        <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]"/>
+
+    </main>
+
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]"/>
+
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.6.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/history.js"></script>
+</body>
+
+</html>

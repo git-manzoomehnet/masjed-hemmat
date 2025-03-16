@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  gap: 5px;
+  max-width: 100%;
+}
+
+.breadcrumb-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+.breadcrumb-article {
+  flex-basis: 100%; /* این باعث می‌شود که متن مقاله از خط جدید شروع شود */
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.breadcrumb span {
+  color: #555;
+}
+
+.article-title {
+  display: inline-block;
+  max-width: 50%; /* این مقدار را تنظیم کن تا نصف در خط اول و نصف در خط بعدی باشد */
+  word-break: break-word;
+}
+
+
+  </style>
+</head>
+<body>
+  <nav class="breadcrumb">
+    <div class="breadcrumb-top">
+      <a href="#">صفحه نخست</a>
+      <span>›</span>
+      <a href="#">رویدادها</a>
+      <span>›</span>
+    </div>
+    <div class="breadcrumb-article">
+      <a href="#" class="article-title">
+        إِنَّا لِلّهِ وَإِنَّـا إِلَیْهِ رَاجِعونَ - عروج روح بلند رئیس
+      </a>
+    </div>
+  </nav>
+  
+  
+</body>
+</html>

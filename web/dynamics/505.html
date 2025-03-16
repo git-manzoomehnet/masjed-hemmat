@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error | خطا</title>
+    <meta name="description" content="متاسفانه صفحه مورد نظر یافت نشد">
+        <basis core="call" file="styles.inc" />
+</head>
+<body>
+    <basis core="call" file="header.inc" />
+
+    <div class="errorPage h-svh overflow-hidden flex flex-col justify-center items-center" dir="rtl">
+        <div class="imgS flex justify-center items-center relative w-90p mx-auto">
+            <img src="[##cms.cms.cdn##]/images/bg404.png" alt="Error">
+
+            <div class="title absolute text-center bottom-12">
+                <h1 class="font-Kohinoor700 text-[200px]">
+                    500
+                </h1>
+
+                <p class="font-Kohinoor600 text-xl text-gray-matn">
+                    صفحه مورد نظر یافت نشد
+                </p>
+            </div>
+        </div>
+        <a href="/" title="بازگشت به صفحه نخست" class="flex items-center justify-center w-[218px] h-[49px] mt-11 border border-gold-pr group/btn hover:bg-gold-pr duration-500">
+            <span class="flex items-center gap-x-1 font-Kohinoor400 text-sm text-gold-pr group-hover/btn:text-white duration-500" title="@title">
+                بازگشت به صفحه نخست 
+
+                <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="group-hover/btn:stroke-white duration-500" d="M9 1L5 4.5L9 8" stroke="#B8930C"/>
+                    <path class="group-hover/btn:stroke-white duration-500" d="M5 1L1 4.5L5 8" stroke="#B8930C"/>
+                    </svg>
+                    
+            </span>
+
+        </a>
+    </div>
+
+    <basis core="call" file="scripts.inc" />
+
+</body>
+</html>

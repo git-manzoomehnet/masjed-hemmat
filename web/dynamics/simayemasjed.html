@@ -1,0 +1,94 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213202"> <member name="videoList" type="list" size="459x258" propertyid="7247"/> </basis>	
+
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سیمای مسجد</title>
+    <meta name="description" content="سیمای مسجد همت تجریش">
+    <basis core="call" file="styles.inc" />
+</head>
+
+<body>
+    <main class="simayeMasjedList" dir="rtl">
+        <basis core="call" file="header.inc" />
+        <basis core="call" file="side-content.inc" />
+
+        <section class="section1">
+            <div class="imgS  h-[690px]">
+                <img src="[##cms.cms.cdn##]/images/banner-sima.jpg" alt="@name" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <div class="breadCrumb w-90p mx-auto mt-4">
+            <ul class="flex items-center py-5 gap-x-2.5">
+                <li class="flex items-center gap-x-2.5">
+                    <a href="/" class="flex items-center gap-x-4">
+                        <img src="[##cms.cms.cdn##]/images/home.svg" alt="home">
+                        <span class="font-Kohinoor400 text-sm text-grayn">
+                            صفحه نخست
+                        </span>
+                    </a>
+                    <img src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="">
+                </li>
+                <li class="flex">
+                        <span class="font-Kohinoor400 text-sm text-grayn">
+                            رسانه مسجد
+                        </span>
+                </li>
+            </ul>
+        </div>
+        <section class="section2 pb-14">
+            <div class="mainTitle flex items-center justify-center mt-2 relative">
+                <img src="[##cms.cms.cdn##]/images/bgTitle.png" alt="background title">
+
+                <h1 class="absolute font-Kohinoor600 z-1 text-xl">
+                    رسانه مسجد
+                </h1>
+            </div>
+
+            <div class="simayeMasjedContainer mt-11 w-90p mx-auto grid grid-cols-3 gap-8">
+               
+
+                <basis core="print" datamembername="db.videoList">
+                   
+                    <face>
+                        <div class="simaBox hover:shadow-[4px_4px_15.6px_1px_#BFBFBF] duration-500">
+                           <a href="@prp_7247" title="@title" target="_blank">
+                               <div class="imgS">
+                                   <img class="w-full" src="[##cms.cms.cdn##]/@00459X00258prp" alt="@title">
+                               </div>
+           
+                               <div class="descS bg-gray-light border-b border-b-gold-pr py-7 px-4">
+                                   <h2 class="font-Kohinoor600 text-base mb-6">
+                                      @title
+                                   </h2>
+           
+                                   <span class="flex items-center gap-x-1 font-Kohinoor400 text-sm text-gold-pr" title="@title">
+                                       مشاهده ویدیو  
+           
+                                       <img src="[##cms.cms.cdn##]/images/readMorev.svg" alt="@title">
+                                   </span>
+                               </div>
+                           </a>
+                        </div>
+                        
+                    </face>
+                </basis>
+
+
+            </div>
+        </section>
+
+        <basis core="call" file="footer.inc" />
+
+    </main>
+
+    <basis core="call" file="scripts.inc" />
+
+</body>
+
+</html>

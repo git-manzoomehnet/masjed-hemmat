@@ -1,0 +1,419 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213206">
+    <member name="list-mandegar" size="418x486" propertyid="7244,7249" q="[##cms.query.q##]" type="list" postsql=" select * from [db.list-mandegar] where title like '%[##cms.query.q##]%'"/> 
+   </basis>	
+   <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213202"> 
+   <member name="list-SimayeMasjed" size="459x258" propertyid="7247" type="list" postsql=" select * from [db.list-SimayeMasjed] where title like '%[##cms.query.q##]%'"/>
+    </basis>
+   <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213215">
+    <member name="list-event" size="641x326" propertyid="7244,7249" type="list" postsql=" select * from [db.list-event] where title like '%[##cms.query.q##]%'"/> 
+   </basis>
+   <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213219"> 
+   <member name="list-gallery" size="418x435" propertyid="7249" type="list" postsql=" select * from [db.list-gallery] where title like '%[##cms.query.q##]%'"/>
+    </basis>
+
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتیجه جستجو برای [##cms.query.q##]</title>
+    <meta name="description" content="نتیجه جستجو برای [##cms.query.q##]">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <basis core="call" file="styles.inc" />
+</head>
+
+<body>
+    <div class="searchPage" dir="rtl">
+        <basis core="call" file="header.inc" />
+        <basis core="group" if="'[##db.list-gallery.RowNumber##]' = '' and '[##db.list-SimayeMasjed.RowNumber##]' = '' and '[##db.list-event.RowNumber##]' = '' and '[##db.list-mandegar.RowNumber##]' = ''">
+
+            <div class="notFoundSearch">
+                <div class="flex items-center justify-center w-svw h-svh duration-1000">
+
+                    <div class="w-[69%] max-w-[1102px] mx-auto flex items-center justify-center relative flex-col">
+                        <form role="search" id="searchform" action="/search.bc" method="get"
+                            class="w-full flex border-b border-b-gold-pr">
+                            <input
+                                class="w-full px-1 py-6 focus:border-0 focus-visible:border-0 border-0 outline-0 font-Kohinoor500 text-sm text-black placeholder:font-Kohinoor500 placeholder:text-sm placeholder:text-black"
+                                type="search" placeholder="جستجو کنید...">
+                            <button type="submit" class="cursor-pointer">
+                                <img src="[##cms.cms.cdn##]/images/searchBtn.svg" alt="search">
+                            </button>
+                        </form>
+
+                        <div class="para font-Kohinoor500 text-lg text-gold-pr mt-24">
+                            <p>
+                                باعرض پوزش مطلبی پیدا نشد.واژه دیگری را جست و جو نمایید.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </basis>
+        <basis core="group" if="'[##db.list-gallery.RowNumber##]' <> '' or '[##db.list-SimayeMasjed.RowNumber##]' <> '' or '[##db.list-event.RowNumber##]' <> '' or '[##db.list-mandegar.RowNumber##]' <> ''">
+
+            <div class="foundSearchPage">
+                <form role="search" id="searchform" action="/search.bc" method="get"
+                    class="flex border-b border-b-gold-pr w-[69%] max-w-[1102px] mx-auto mt-[180px]">
+                    <input
+                        class="w-full px-1 py-6 focus:border-0 focus-visible:border-0 border-0 outline-0 font-Kohinoor500 text-sm text-black placeholder:font-Kohinoor500 placeholder:text-sm placeholder:text-black"
+                       name="q" type="search" placeholder="جستجو کنید...">
+                    <button type="submit" class="cursor-pointer">
+                        <img src="[##cms.cms.cdn##]/images/searchBtn.svg" alt="search">
+                    </button>
+                </form>
+
+                <basis core="print" datamembername="db.list-mandegar">
+                    <layout>
+                        <div class="topFaces mb-24">
+                            <div class="title flex items-center gap-x-4 w-90p mx-auto mt-16">
+                                <img src="[##cms.cms.cdn##]/images/titleIcon.svg" alt="topFaces">
+
+                                <h1 class="font-Kohinoor600 text-lg">
+                                    نتایج جستجو در چهره های ماندگار
+                                </h1>
+                            </div>
+
+                            <div class="swiper topfacesSlider mt-7 py-3">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    @child
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </layout>
+
+                    <face>
+                        <div class="swiper-slide !w-[418px]">
+                            <a href="/@link" title="@title"
+                                class="relative rounded-3xl overflow-hidden block group/hoverTopFaces shadow-[4px_4px_15.6px_1px_BFBFBF]">
+                                <div class="imgS">
+                                    <img class="w-full h-full object-cover" src="[##cms.cms.cdn##]/@00418X00486prp"
+                                        alt="@title">
+                                </div>
+
+                                <div
+                                    class="titles py-6 px-4 bg-gradient-to-b from-gold-pr/[0.44] to-gold-sc absolute bottom-0 w-full">
+                                    <p class="font-Kohinoor600 text-base text-white mb-6">
+                                        @title
+                                    </p>
+                                    <span class="font-IRANSansWebFaNum300 relative z-10 text-sm text-white mb-6 block">
+                                        @prp_7249
+
+                                    </span>
+
+                                    <span
+                                        class="flex items-center font-Kohinoor400 relative z-10 text-sm text-white gap-x-1">
+                                        مشاهده
+                                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 1L5 4.5L9 8" stroke="#FAFAFA" />
+                                            <path d="M5 1L1 4.5L5 8" stroke="#FAFAFA" />
+                                        </svg>
+
+                                    </span>
+                                </div>
+
+                                <div
+                                    class="overDesc translate-y-[100%] duration-1000 py-10 px-5 bg-gold-pr absolute inset-0 z-1 group-hover/hoverTopFaces:translate-y-0">
+                                    <h5 class="font-Kohinoor600 text-base text-gray-light mb-5">
+                                       @title
+                                    </h5>
+                                    <div class="para font-Kohinoor400 text-sm text-justify text-gray-light " style="display: -webkit-box;-webkit-line-clamp: 5;-webkit-box-orient: vertical;overflow: hidden;">
+                                        <p>
+                                          @prp_7244
+                                            </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </face>
+                </basis>
+
+
+                <basis core="print" datamembername="db.list-SimayeMasjed">
+                    <layout>
+                        <div class="simayeMasjed mb-24 w-90p mx-auto">
+                            <div class="title flex items-center gap-x-4 mt-16">
+                                <img src="[##cms.cms.cdn##]/images/titleIcon.svg" alt="topFaces">
+
+                                <h2 class="font-Kohinoor600 text-lg">
+                                    نتایج جستجو در سیمای مسجد
+                                </h2>
+                            </div>
+
+
+                            <div class="swiper simayeMasjedSlider mt-5 relative py-3">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+
+
+                                    @child
+
+                                </div>
+
+                                <div
+                                    class="prevsimayeMasjed z-1 [&.swiper-button-lock]:!block group/prevsimayeMasjed absolute -right-px cursor-pointer top-[calc(50%-44px)]">
+                                    <svg class="rotate-180 " width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="43.4492" height="43.4492" fill="white" />
+                                        <path class=" group-[&.swiper-button-disabled]/prevsimayeMasjed:opacity-50"
+                                            d="M13 21.5L31 10V33L13 21.5Z" fill="#B8930C" />
+                                    </svg>
+
+
+                                </div>
+                                <div
+                                    class="nextsimayeMasjed z-1 [&.swiper-button-lock]:!block group/nextsimayeMasjed absolute -left-px cursor-pointer top-[calc(50%-44px)]">
+                                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="43.4492" height="43.4492" fill="white" />
+                                        <path class="group-[&.swiper-button-disabled]/nextsimayeMasjed:opacity-50"
+                                            d="M13 21.5L31 10V33L13 21.5Z" fill="#B8930C" />
+                                    </svg>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </layout>
+                    <face>
+                        <div class="swiper-slide !w-[459px]">
+                            <div class="simaBox hover:shadow-[4px_4px_15.6px_1px_#BFBFBF] duration-500">
+                                <a href="@prp_7247" title="@title">
+                                    <div class="imgS">
+                                        <img class="w-full" src="[##cms.cms.cdn##]/@00459X00258prp" alt="@title">
+                                    </div>
+
+                                    <div class="descS bg-gray-light border-b border-b-gold-pr py-7 px-4">
+                                        <h2 class="font-Kohinoor600 text-base mb-6">
+                                            @title
+                                        </h2>
+
+                                        <a href="/@link"
+                                            class="flex items-center gap-x-1 font-Kohinoor400 text-sm text-gold-pr"
+                                            title="@title">
+                                            مشاهده ویدیو
+
+                                            <img src="[##cms.cms.cdn##]/images/readMorev.svg" alt="@title">
+                                        </a>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
+
+
+                <basis core="print" datamembername="db.list-event">
+                    <layout>
+                        <div class="Events mb-24 w-90p mx-auto">
+                            <div class="title flex items-center gap-x-4 mt-16">
+                                <img src="[##cms.cms.cdn##]/images/titleIcon.svg" alt="topFaces">
+
+                                <h2 class="font-Kohinoor600 text-lg">
+                                    نتایج جستجو در رویدادها
+                                </h2>
+                            </div>
+
+
+                            <div class="swiper EventsSlider mt-5 relative">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+
+
+                                    @child
+
+                                </div>
+
+                                <div
+                                    class="prevEvents z-1 [&.swiper-button-lock]:!block group/prevEvents absolute -right-px cursor-pointer top-[calc(50%-44px)]">
+                                    <svg class="rotate-180 " width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="43.4492" height="43.4492" fill="white" />
+                                        <path class=" group-[&.swiper-button-disabled]/prevEvents:opacity-50"
+                                            d="M13 21.5L31 10V33L13 21.5Z" fill="#B8930C" />
+                                    </svg>
+
+
+                                </div>
+                                <div
+                                    class="nextEvents z-1 [&.swiper-button-lock]:!block group/nextEvents absolute -left-px cursor-pointer top-[calc(50%-44px)]">
+                                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="43.4492" height="43.4492" fill="white" />
+                                        <path class="group-[&.swiper-button-disabled]/nextEvents:opacity-50"
+                                            d="M13 21.5L31 10V33L13 21.5Z" fill="#B8930C" />
+                                    </svg>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </layout>
+
+                    <face>
+                        <div class="swiper-slide">
+
+
+                            <div class="eventBox flex items-center gap-x-[123px]">
+                                <div class="imgS shrink-0 w-[45%] relative flex items-center">
+                                    <a href="/@link" title="@title">
+                                        <img src="[##cms.cms.cdn##]/@00641X00326prp" alt="@title">
+                                    </a>
+
+                                    <div
+                                        class="date bg-white flex items-center justify-center absolute bg-center w-[141px] h-[141px] left-0 -translate-x-[calc(50%+15px)] shadow-[0px_4px_6px_-1px_#0000001A]">
+                                        <div class="bg w-[86px] flex items-center justify-center h-[86px]"
+                                            style="background:url([##cms.cms.cdn##]/images/bgDate.png) ;">
+
+                                            <span
+                                                class="text-center whitespace-pre-line text-xl font-IRANSansWebFaNum300">
+                                                @prp_7249
+
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="descS w-[55%] pl-16">
+                                    <h2 class="font-Kohinoor500  text-lg mb-5">
+                                        @title
+                                    </h2>
+                                    <div class="para font-Kohinoor400 text-sm text-justify mb-5 text-gray-matn">
+
+                                        <p>
+                                            @prp_7244
+                                        </p>
+                                    </div>
+                                    <span class="flex items-center gap-x-4 font-Kohinoor400 text-sm text-gold-pr"
+                                        title="@title">
+                                        مشاهده
+
+                                        <img src="[##cms.cms.cdn##]/images/readMorev.svg" alt="@title">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
+
+
+                <basis core="print" datamembername="db.list-gallery">
+                    <layout>
+                        <div class="Gallery mb-24 w-90p mx-auto">
+                            <div class="title flex items-center gap-x-4 mt-16">
+                                <img src="[##cms.cms.cdn##]/images/titleIcon.svg" alt="topFaces">
+
+                                <h2 class="font-Kohinoor600 text-lg">
+                                    نتایج جستجو در آلبوم عکس
+                                </h2>
+                            </div>
+
+
+                            <div class="swiper GallerySlider mt-5 relative">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+
+                                    @child
+
+                                </div>
+
+                                <div
+                                    class="prevGallery z-1 [&.swiper-button-lock]:!block group/prevGallery absolute -right-px cursor-pointer top-[calc(50%-44px)]">
+                                    <svg class="rotate-180 " width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="43.4492" height="43.4492" fill="white" />
+                                        <path class=" group-[&.swiper-button-disabled]/prevGallery:opacity-50"
+                                            d="M13 21.5L31 10V33L13 21.5Z" fill="#B8930C" />
+                                    </svg>
+
+
+                                </div>
+                                <div
+                                    class="nextGallery z-1 [&.swiper-button-lock]:!block group/nextGallery absolute -left-px cursor-pointer top-[calc(50%-44px)]">
+                                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="43.4492" height="43.4492" fill="white" />
+                                        <path class="group-[&.swiper-button-disabled]/nextGallery:opacity-50"
+                                            d="M13 21.5L31 10V33L13 21.5Z" fill="#B8930C" />
+                                    </svg>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </layout>
+
+                    <face>
+                        <div class="swiper-slide !w-[418px] h-auto">
+                            <div
+                                class="albumBox shadow-[0px_9px_15.6px_0px_#E8E8E8] pb-5 rounded-tl-3xl rounded-tr-3xl overflow-hidden">
+                                <a class="h-full flex flex-col justify-between" href="/@link" title="@title">
+                                    <div class="imgS">
+                                        <img src="[##cms.cms.cdn##]/@00418X00435prp" alt="@title">
+                                    </div>
+
+                                    <div class="descS bg-gray-light py-5 px-3 border-b border-b-gold-pr flex flex-col justify-between" style="width: 100%;height: -moz-available;height: -webkit-fill-available;height: fill-available;">
+                                        <h2 class="font-Kohinoor600 text-base mb-6">
+                                            @title
+                                        </h2>
+
+                                        <div class="flex items-center justify-between">
+                                            <span
+                                                class="flex items-center gap-x-1 font-Kohinoor400 text-sm text-gold-pr"
+                                                title="@title">
+                                                مشاهده
+
+                                                <img src="[##cms.cms.cdn##]/images/readMorev.svg" alt="@title">
+                                            </span>
+
+                                            <span class="font-IRANSansWebFaNum300 text-sm text-black">
+                                                @prp_7249
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
+
+
+
+            </div>
+        </basis>
+
+
+        <basis core="group" if="'[##db.list-gallery.RowNumber##]' <> '' or '[##db.list-SimayeMasjed.RowNumber##]' <> '' or '[##db.list-event.RowNumber##]' <> '' or '[##db.list-mandegar.RowNumber##]' <> ''">
+        <basis core="call" file="footer.inc" />
+        </basis>
+
+    </div>
+
+    <basis core="call" file="scripts.inc" />
+
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.6.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/search.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,455 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
+    <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]">
+    <member name="image-event" type="list" format="4" />
+</basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member name="event" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="1" usedforid="[##cms.query.id##]">
+    <member propertyid="7249,7244" type="list" name="related-event" size="641x326" blgid="222" link="event.bc"
+        postsql="select *, SUBSTR(prp_7244, 1,100-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 100)))) || '...' as substr from [basisName.related-event]" />
+</basis>
+<basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]">
+    <member request="json-ld" type="scalar" name="fq" />
+</basis>
+
+
+
+<basis core="dbsource" source="userbehavior" name="db" lid="1" userid="100005" usedforid="[##cms.query.id##]" >
+	<member request="listcomment" type="list" name="commentlist" link="event.bc"  />
+</basis>
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <basis core="call" file="styles.inc" />
+</head>
+
+<body>
+    <div class="eventShow" dir="rtl">
+        <basis core="call" file="header.inc" />
+        <basis core="call" file="side-content.inc" />
+
+        <section class="section1 pt-[173px]">
+            <basis core="print" datamembername="db.image-event">
+                
+                <face filter="ord=1">
+                        <div class="imgS h-[690px]">
+                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" class="w-full h-full object-cover">
+                    </div>
+
+                    </face>
+                </basis>
+        </section>
+
+        <div class="breadCrumb w-90p mx-auto mt-4">
+            <ul class="flex items-center py-5 gap-x-2.5">
+                <li class="flex items-center gap-x-2.5">
+                    <a href="/" class="flex items-center gap-x-4">
+                        <img src="[##cms.cms.cdn##]/images/home.svg" alt="home">
+                        <span class="font-Kohinoor400 text-sm text-grayn">
+                            صفحه نخست
+                        </span>
+                    </a>
+                    <img src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="">
+                </li>
+                <li class="flex items-center gap-x-2.5">
+                    <a href="/event-list.bc" title="@title">
+                        <span class="font-Kohinoor400 text-sm text-grayn">
+                            رویدادها
+                        </span>
+                    </a>
+                    <img src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="">
+                </li>
+                <li>
+                    <basis core="print" datamembername="db.event">
+
+                        <face filter="TypeID=150">
+                            <span class="font-Kohinoor400 text-sm text-grayn">
+                                @Answer
+                            </span>
+
+                        </face>
+                    </basis>
+                </li>
+            </ul>
+        </div>
+
+        <section class="section2 mb-14 w-90p mx-auto py-11 px-8 shadow-[4px_4px_15.6px_1px_#F1F1F1]">
+            <basis core="print" datamembername="db.event">
+
+                <face filter="TypeID=150">
+
+                    <h1 class="font-Kohinoor600 text-xl mb-6">
+                        @Answer
+                    </h1>
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.event">
+
+                <face filter="prpID=7249">
+                    <span class="mb-6 font-IRANSansWebFaNum300 text-sm block">
+                        @Answer
+                    </span>
+
+                </face>
+            </basis>
+
+
+            <div class="flex1 gap-x-8 paraSection">
+                <basis core="print" datamembername="db.image-event">
+                    <layout>
+                        <div class="swiper float-right eventSldier !ml-8 w-[44%] max-w-[641px]">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+
+                                @child
+                            </div>
+                            <div class="btns absolute left-0 bottom-0 z-1 flex gap-x-0">
+                                <div
+                                    class="prevEvent group/prevEvent cursor-pointer rotate-180 -ml-1.5 [&.swiper-button-lock]:!block ">
+
+                                    <svg class="" width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="43.4492" height="43.4492" fill="white" />
+                                        <path class="group-[&.swiper-button-disabled]/prevEvent:opacity-50" class=""
+                                            d="M13 21.5L31 10V33L13 21.5Z" fill="#B8930C" />
+                                    </svg>
+                                </div>
+                                <div class="nextEvent group/nextEvent cursor-pointer [&.swiper-button-lock]:!block ">
+
+                                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="43.4492" height="43.4492" fill="white" />
+                                        <path class="group-[&.swiper-button-disabled]/nextEvent:opacity-50"
+                                            d="M13 21.5L31 10V33L13 21.5Z" fill="#B8930C" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                        </div>
+                    </layout>
+
+                    <face filter="ord=1000">
+                        <div class="swiper-slide">
+
+                            <div class="imgS">
+                                <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
+
+                <basis core="print" datamembername="db.event">
+
+                    <face filter="TypeID=250">
+                        @largetext
+                    </face>
+                </basis>
+            </div>
+
+        </section>
+
+        <basis core="print" datamembername="basisName.related-event">
+            <layout>
+                <section class="section3 w-90p mx-auto mb-[130px]">
+                    <div class="title flex items-center gap-x-4 mt-16">
+                        <img src="[##cms.cms.cdn##]/images/titleIcon.svg" alt="topFaces">
+
+                        <h2 class="font-Kohinoor600 text-lg">
+                            رویدادهای مشابه
+                        </h2>
+                    </div>
+                    <div class="swiper EventsSliderRel mt-5 relative">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+
+
+                            @child
+                        </div>
+
+                        <div
+                            class="prevEventsRel z-1 [&.swiper-button-lock]:!block group/prevEventsRel absolute -right-px cursor-pointer top-[calc(50%-44px)]">
+                            <svg class="rotate-180 " width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="43.4492" height="43.4492" fill="white" />
+                                <path class=" group-[&.swiper-button-disabled]/prevEventsRel:opacity-50"
+                                    d="M13 21.5L31 10V33L13 21.5Z" fill="#B8930C" />
+                            </svg>
+
+
+                        </div>
+                        <div
+                            class="nextEventsRel z-1 [&.swiper-button-lock]:!block group/nextEventsRel absolute -left-px cursor-pointer top-[calc(50%-44px)]">
+                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="43.4492" height="43.4492" fill="white" />
+                                <path class="group-[&.swiper-button-disabled]/nextEventsRel:opacity-50"
+                                    d="M13 21.5L31 10V33L13 21.5Z" fill="#B8930C" />
+                            </svg>
+
+
+                        </div>
+                    </div>
+                </section>
+
+            </layout>
+
+            <face>
+                <div class="swiper-slide">
+
+
+                    <a href="/@link" title="@title" class="eventBox flex items-center gap-x-[123px]">
+                        <div class="imgS shrink-0 w-[45%] relative flex items-center">
+                            <div>
+                                <img src="[##cms.cms.cdn##]/@00641X00326prp" alt="@title">
+                            </div>
+
+                            <div
+                                class="date bg-white flex items-center justify-center absolute bg-center w-[141px] h-[141px] left-0 -translate-x-[calc(50%+15px)] shadow-[0px_4px_6px_-1px_#0000001A]">
+                                <div class="bg w-[86px] flex items-center justify-center h-[86px]"
+                                    style="background:url([##cms.cms.cdn##]/images/bgDate.png) ;">
+
+                                    <span class="text-center whitespace-pre-line text-xl font-IRANSansWebFaNum300">
+                                        @prp_7249
+
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="descS w-[55%] pl-16">
+                            <h2 class="font-Kohinoor500  text-lg mb-5">
+                                @title
+                            </h2>
+                            <div class="para font-Kohinoor400 text-sm text-justify mb-5 text-gray-matn">
+
+                                <p>
+
+                                    @substr
+                                </p>
+                            </div>
+                            <span class="flex items-center gap-x-4 font-Kohinoor400 text-sm text-gold-pr"
+                                title="@title">
+                                مشاهده
+
+                                <img src="[##cms.cms.cdn##]/images/readMorev.svg" alt="@title">
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </face>
+        </basis>
+
+
+
+
+
+
+
+
+
+
+        <section class="section4 mb-[130px] w-90p mx-auto">
+            <div class="">
+                <div class="commentForm mb-12">
+                    <div class="title flex items-center gap-x-4 mb-12">
+                        <img src="[##cms.cms.cdn##]/images/titleIcon.svg" alt="topFaces">
+        
+                        <h2 class="font-Kohinoor600 text-lg">
+                            ثبت نظر
+                        </h2>
+                    </div>
+                    <basis core="dbsource" source="userbehavior" name="db" title="{##db.senduserName.value##}"
+                        run="atclient" triggers="db.sendcomment" if="{##db.sendcomment##}" parentid="0"
+                        usedforid="[##cms.query.id##]" userid="100005" mid="1" comment="{##db.sendcomment.value##}">
+                        <member request="comment" type="scalar" name="comment" preview="true"
+                            onRendered="renderCommentFn" />
+                    </basis>
+
+                    <form action="" class="commentP flex gap-x-3">
+                        <div class="rSec w-[41%]">
+                            <div class="userInfo mb-4">
+                                <div class="nameInput relative mb-4">
+                                    <label for="userName" class="font-Kohinoor400 block mb-4 text-sm text-grayn">
+                                        نام و نام خانوادگی
+                                    </label>
+                                    <input name="userName"
+                                        class="w-full userName outline-0 h-[48px] border border-gray-border rounded-lg text-right font-Kohinoor400  text-sm text-grayn"
+                                        type="text" />
+                                </div>
+                                <div class="emailInput relative mb-4">
+                                    <label for="email" class="font-Kohinoor400 block mb-4 text-sm text-grayn">
+                                      ایمیل
+                                    </label>
+                                    <input type="email" name="email"
+                                        class="w-full outline-0 border h-[48px] border-gray-border rounded-lg text-right font-Kohinoor400  text-sm text-grayn"
+                                       />
+                                </div>
+                                <!-- <div class="tellInput relative">
+                                    <input type="tel"
+                                        class="w-full outline-0 mb-3 text-right font-IRANSansWebFaNum400 text-base text-StarDust600 py-1.5 placeholder:font-IRANSansWebFaNum400 border-b border-b-StarDust400"
+                                        placeholder="تلفن همراه" />
+                                </div> -->
+                            </div>
+
+                            <div class="messageSend font-Kohinoor400 text-gray-matn text-base">
+                                <p></p>
+                            </div>
+                            <div class="btnsContainer gap-x-2.5 flex justify-between items-center">
+                                <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1"
+                                    run="atclient">
+                                    <member name="code1" type="scalar" request="captcha"></member>
+                                </basis>
+                                <basis datamembername="captcha1.code1" core="print" run="atclient">
+                                    <face>
+                                        <script type="text/template">
+                                        <div class="captchaContain pl-4 pt-2.5 border border-grayBorder rounded-lg flex items-center gap-x-2.5 h-[49px] flex-row-reverse">
+                            <span class="captcha-sefaresh shrink-0">
+                                <img src="/@captcha@" width="88" height="44" class="captcha-sefaresh"
+                                    alt="captcha" title="captcha" />
+                                <input type="hidden" name="captchaid" value="@captcha@" />
+                            </span>
+        
+                        <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh refressh1 cursor-pointer" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+        
+                            <input type="text" class="codeinputm w-full font-Kohinoor400 text-sm text-gray-matn outline-0 self-stretch"
+                            name="captcha" />
+                        </div>
+                      </script>
+                                    </face>
+                                </basis>
+                                <button type="button"
+                                    class="submitComment cursor-pointer justify-center flex items-center gap-x-2 w-[218px] h-[49px] rounded-lg border border-gray-border">
+                                    <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L5 4.5L9 8" stroke="black"/>
+                                        <path d="M5 1L1 4.5L5 8" stroke="black"/>
+                                        </svg>
+                                    
+                                    <span class="font-Kohinoor400 text-sm text-black whitespace-nowrap">
+                                        ثبت
+                                    </span>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="msg w-[59%]">
+                            <div class="msgInput h-full relative">
+                                <label for="message" class="font-Kohinoor400 block mb-4 text-sm text-grayn">
+                                  پیام
+                                </label>
+                                <_textarea 
+                                    class="w-full outline-0 h-[calc(100%-36px)] border border-gray-border rounded-lg text-right font-Kohinoor400  text-sm text-grayn"
+                                    name="message" id="message" ></_textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="commentList">
+                    <div class="title flex items-center gap-x-4 mb-12">
+                        <img src="[##cms.cms.cdn##]/images/titleIcon.svg" alt="topFaces">
+        
+                        <h2 class="font-Kohinoor600 text-lg">
+                            نظرات ثبت شده
+                        </h2>
+                    </div>
+                    <!-- Slider main container -->
+                    <div class="swiper commentListSlider !pl-[51px] !pr-[51px] w-full">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <basis core="print" datamembername="db.commentlist">
+
+                                <else-layout>
+
+                                    <div
+                                        class="swiper-slide p-7 border border-gray-border rounded-lg font-Kohinoor400 text-sm text-gray-matn">
+                                        هنوز کامنتی ثبت نشده است.
+                                        <br>
+                                        شما اولین نفر باشید
+                                    </div>
+                                </else-layout>
+                                <face>
+                                    <div class="swiper-slide p-7 border border-gray-border rounded-lg">
+                                        <span class="font-Kohinoor400 text-sm text-black mb-8">
+                                            @username
+                                        </span>
+
+                                        <div
+                                            class="para font-Kohinoor400 text-sm leading-[30px] text-gray-matn text-justify">
+                                            <p>
+                                                @comment
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </face>
+                            </basis>
+                        </div>
+
+                       <div class="nextComment group/nextComment [&.swiper-button-disabled]:opacity-50 [&.swiper-button-disabled]:!block absolute left-0 cursor-pointer top-[calc(50%-22px)]">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="43.4492" height="43.4492" fill="white"/>
+                            <path d="M13 21.5L31 10V33L13 21.5Z" fill="#B8930C"/>
+                            </svg>
+                            
+                       </div>
+                       <div class="prevComment group/prevComment [&.swiper-button-disabled]:opacity-50 [&.swiper-button-disabled]:!block absolute right-0 cursor-pointer top-[calc(50%-22px)]">
+                        <svg class="rotate-180" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="43.4492" height="43.4492" fill="white"/>
+                            <path d="M13 21.5L31 10V33L13 21.5Z" fill="#B8930C"/>
+                            </svg>
+                            
+                       </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        <basis core="call" file="footer.inc" />
+
+
+    </div>
+
+    <basis core="call" file="scripts.inc" />
+
+
+    <script src="[##cms.cms.cdn##]/_js/basiscore-2.30.1.min.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.6.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/eventShow.js"></script>
+
+
+    <script type="application/ld+json">
+        [##json.fq.column1##] 
+        </script>
+</body>
+
+</html>

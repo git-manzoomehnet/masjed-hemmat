@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اوقات شرعی براساس موقعیت مکانی</title>
+</head>
+<body>
+    <h1>اوقات شرعی امروز</h1>
+    <p id="location">📍 در حال دریافت موقعیت مکانی...</p>
+    <ul id="prayer-times"></ul>
+
+    <script>
+        function fetchPrayerTimes(lat, lon) {
+            const apiURL = `https://api.aladhan.com/v1/timings?latitude=${lat}&longitude=${lon}&method=2`;
+            fetch(apiURL)
+                .then(response => response.json())
+                .then(data => {
+                    let timings = data.data.timings;
+                    let prayerList = document.getElementById("prayer-times");
+                    prayerList.innerHTML = `
+                        <li>🕌 اذان صبح: ${timings.Fajr}</li>
+                        <li>🌅 طلوع آفتاب: ${timings.Sunrise}</li>
+                        <li>🕌 اذان ظهر: ${timings.Dhuhr}</li>
+                        <li>🕌 اذان عصر: ${timings.Asr}</li>
+                        <li>🌇 غروب آفتاب: ${timings.Sunset}</li>
+                        <li>🕌 اذان مغرب: ${timings.Maghrib}</li>
+                        <li>🕌 اذان عشاء: ${timings.Isha}</li>
+                    `;
+                })
+                .catch(error => console.error("❌ خطا در دریافت اوقات شرعی:", error));
+        }
+
+        fetch('https://ipwho.is/')
+            .then(response => response.json())
+            .then(data => {
+                let latitude = data.latitude;
+                let longitude = data.longitude;
+                document.getElementById("location").textContent = `📍 عرض جغرافیایی: ${latitude}, طول جغرافیایی: ${longitude}`;
+                fetchPrayerTimes(latitude, longitude);
+            })
+            .catch(error => {
+                document.getElementById("location").textContent = "❌ خطا در دریافت موقعیت مکانی";
+                console.error("Error fetching location:", error);
+            });
+  
+  
+  
+  </script>
+</body>
+</html>

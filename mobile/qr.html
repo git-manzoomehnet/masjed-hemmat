@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/outputMobile.css">
+</head>
+<body>
+    <main class="qrCode h-svh flex flex-col items-center justify-center">
+        <div class="inner">
+            <div class="rightSection bg-gray-light py-7 px-5 flex items-center justify-center">
+                <div class="inner w-full">
+
+                    <h2 class="font-Kohinoor500 text-lg mb-12">
+                        راه های ارتباطی
+                    </h2>
+
+                    <basis core="print" datamembername="db.contactus">
+                        <layout>
+                            <div class="phone">
+                                <ul>
+                                    @child
+                                </ul>
+                            </div>
+                        </layout>
+                        
+                        <face filter="TypeID=240">
+                            <li class="flex items-center gap-x-3 mb-4">
+                                <img src="[##cms.cms.cdn##]/images/phoneContactUs.svg" alt="phone">
+                                <span class="font-IRANSansWebFaNum400 text-sm">
+                                  @Answer
+                                </span>
+                            </li>
+                            
+                        </face>
+                    </basis>
+
+                    <basis core="print" datamembername="db.contactus">
+                        <layout>
+                            <div class="address">
+                                <ul>
+                                    @child
+                                </ul>
+                            </div>
+                        </layout>
+                        
+                        <face filter="TypeID=244">
+                            <li class="flex items-center gap-x-3 mb-4">
+                                <img src="[##cms.cms.cdn##]/images/locationContactUs.png" alt="phone">
+                                <span class="font-Kohinoor400 text-sm">
+                                   @Answer
+                                </span>
+                            </li>
+                            
+                        </face>
+                    </basis>
+
+                    <basis core="print" datamembername="db.contactus">
+                        <layout>
+                            <div class="mails">
+                                <ul>
+                                    @child
+                                </ul>
+                            </div>
+                        </layout>
+                        
+                        <face filter="Question='ایمیل'">
+                            <li class="flex items-center gap-x-3 mb-4">
+                                <img src="[##cms.cms.cdn##]/images/mailContactUs.svg" alt="phone">
+                                <a href="mailto:@Answer" class="font-Kohinoor400 text-sm">
+                                   @Answer
+                                </a>
+                            </li>
+                            
+                        </face>
+                    </basis>
+
+                    <div class="socials">
+
+                        <ul class="flex gap-x-2.5 items-center">
+                            <basis core="print" datamembername="db.contactus">
+                        
+                                <face filter="text='تلگرام'">
+                                    <li class="flex items-center gap-x-4">
+                                        <a href="@largetext" title="telegram">
+                                            <img src="[##cms.cms.cdn##]/images/telegramContact.svg" alt="telegram">
+                                        </a>
+                                    </li>
+                                    
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.contactus">
+                        
+                                <face filter="text='یوتیوب'">
+                            <li class="flex items-center gap-x-4">
+                                <a href="@largetext" title="telegram">
+                                    <img src="[##cms.cms.cdn##]/images/youtubeContactUs.svg" alt="youtube">
+                                </a>
+                            </li>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.contactus">
+                        
+                                <face filter="text='اینستاگرام'">
+                            <li class="flex items-center gap-x-4">
+                                <a href="@largetext" title="telegram">
+                                    <img src="[##cms.cms.cdn##]/images/instagramContactUs.svg" alt="instagram">
+                                </a>
+                            </li>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.contactus">
+                        
+                                <face filter="text='فیسبوک'">
+                            <li class="flex items-center gap-x-4">
+                                <a href="@largetext" title="telegram">
+                                    <img src="[##cms.cms.cdn##]/images/facebookContactUs.svg" alt="facebook">
+                                </a>
+                            </li>
+                                </face>
+                            </basis>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qrImg my-10">
+                <img src="" alt="qr">
+            </div>
+
+            <a href="/" title="بازگشت به صفحه نخست" class="flex items-center justify-center w-[218px] h-[49px] border border-gold-pr group/btn hover:bg-gold-pr duration-500">
+                <span class="flex items-center gap-x-1 font-Kohinoor400 text-sm text-gold-pr group-hover/btn:text-white duration-500" title="@title">
+                    بازگشت به صفحه نخست 
+    
+                    <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="group-hover/btn:stroke-white duration-500" d="M9 1L5 4.5L9 8" stroke="#B8930C"/>
+                        <path class="group-hover/btn:stroke-white duration-500" d="M5 1L1 4.5L5 8" stroke="#B8930C"/>
+                        </svg>
+                        
+                </span>
+    
+            </a>
+        </div>
+    </main>
+</body>
+</html>

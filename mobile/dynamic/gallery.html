@@ -1,0 +1,124 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1" >
+    <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]">
+     <member name="image-gallery" type="list" format="4"/> </basis>
+     <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]"> 
+        <member name="gallery" type="view"/>
+     </basis>
+    <basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]" > 
+        <member request="json-ld" type="scalar" name="fq" /> 
+       </basis>
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]"/>
+</head>
+
+<body>
+    <main class="galleryShow" dir="rtl">
+        <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]"/>
+        <basis core="print" datamembername="db.image-gallery">
+        
+            <face filter="ord=51">
+                <section class="section1">
+                    <div class="imgS">
+                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="دیاگرام" class="w-full">
+                    </div>
+                </section>
+            </face>
+        </basis>
+        <div class="breadCrumb w-90p mx-auto mt-2">
+        
+
+
+            <a href="/" class="">
+                <img class="inline w-[21px]" src="[##cms.cms.cdn##]/images/home.svg" alt="home">
+                <span class="font-Kohinoor400 text-[10px] inline text-grayn">
+                    صفحه نخست
+                </span>
+            </a>
+            <img class="inline mx-2 w-[3px]" src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="seperator">
+            <a class="inline" href="/gallery-list.bc" title="@title">
+                <span class="font-Kohinoor400 text-[10px] text-grayn">
+                    نگارخانه
+                </span>
+            </a>
+            <img class="inline mx-2 w-[3px]" src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="seperator">
+            <basis core="print" datamembername="db.gallery">
+                   
+                <face filter="TypeID=150">
+                            <span class="font-Kohinoor400 text-[10px] text-grayn">
+                                @Answer
+                            </span>
+                    
+                </face>
+            </basis>
+          
+        </div>
+
+<basis core="print" datamembername="db.gallery">
+    <face filter="TypeID=150">
+       
+        
+        <div class="mainTitle mt-2 relative w-90p mx-auto">
+            <img class="mb-1 mx-auto" src="[##cms.cms.cdn##]/images/bgTitle-mobile.png" alt="background title">
+            
+            <h1 class="text-center font-Kohinoor500 z-1 text-lg">
+                @Answer
+              
+            </h1>
+        </div>
+    </face>
+</basis>
+
+
+<basis core="print" datamembername="db.image-gallery">
+    <layout>
+        <div class="swiper galleryShowSlider mt-14 mb-16 relative">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+             
+                @child
+            </div>
+          
+    
+        </div>
+   
+    </layout>
+    
+    <face filter="ord=50">
+        <div class="swiper-slide group/slides">
+            <div class="imgS">
+                <img class="opacity-50 group-[&.swiper-slide-active]/slides:opacity-100 duration-1000"
+                    src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+            </div>
+        </div>
+    </face>
+</basis>
+
+        <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]"/>
+
+
+    </main>
+
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]"/>
+    <script src="[##cms.cms.cdn##]/_js/swiper.4.3.3.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/gallery-mobile.js"></script>
+    <script type="application/ld+json"> 
+        [##json.fq.column1##] 
+        </script>
+</body>
+
+</html>

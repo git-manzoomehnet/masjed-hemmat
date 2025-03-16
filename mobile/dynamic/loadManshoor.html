@@ -1,0 +1,49 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]"> <member name="manshoor" type="view"/> </basis>	
+
+<basis core="group" if="'[##db.manshoor.RowNumber##]' <> ''">
+    <div class="texbox max-w-[695px] mx-auto ">
+        <div class="titleBox mb-8 text-center">
+            <basis core="print" datamembername="db.manshoor">
+                
+                <face filter="TypeID=129">
+                       <h3 class="font-Kohinoor600 text-xl text-center mb-1  flex justify-center">
+                       @Answer :
+                    </h3>
+                   </face>
+               </basis>
+           <basis core="print" datamembername="db.manshoor">
+              
+               <face filter="TypeID=128">
+                   
+                   <span class="font-Kohinoor400 text-base text-gray-matn">
+                    @Answer
+                   </span>
+               </face>
+           </basis>
+       </div>
+       <div class="descBox text-center ">
+        <basis core="print" datamembername="db.manshoor">
+           
+            <face filter="TypeID=250">
+                <span class="font-Kohinoor600 text-xl mb-1">
+                    @text
+                </span>
+                <div class="para leading-[35px] font-Kohinoor400 text-xl text-gray-matn">
+                   @largetext
+                </div>
+                
+            </face>
+        </basis>
+       </div>
+    </div>
+    
+</basis>
+
+<basis core="group" if="'[##db.manshoor.RowNumber##]' = ''">
+
+<div class="para font-Kohinoor400 text-base">
+    <p>
+متاسفانه منشوری موجود نیست.
+    </p>
+</div>
+</basis>

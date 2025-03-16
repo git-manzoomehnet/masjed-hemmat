@@ -1,0 +1,61 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="[##cms.query.catid##]"> <member type="list" name="topfaceList" size="418x486" propertyid="7249,7244" link="topface.bc" postsql=" select *, SUBSTR(prp_7244, 1,230-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 230)))) || '...' as substr from [db.topfaceList]" /> </basis>	
+
+
+
+<basis core="print" datamembername="db.topfaceList">
+        
+              <else-layout>
+                  <div class="para">
+                    <p>
+                        متاسفانه آیتمی موجود نیست.
+                    </p>
+                  </div>
+              </else-layout>
+              
+                <face>
+                    <div class="faceBox">
+                        <a href="/@link" title="@title"
+                        class="relative rounded-3xl overflow-hidden block group/hoverTopFaces shadow-[4px_4px_15.6px_1px_#BFBFBF]">
+                        <div class="imgS">
+                            <img class="w-full h-full object-cover"
+                                src="[##cms.cms.cdn##]/@00418X00486prp" alt="@title">
+                        </div>
+    
+                        <div
+                            class="titles py-6 px-4 bg-gradient-to-b from-gold-pr/[0.44] to-gold-sc absolute bottom-0 w-full">
+                            <p class="font-Kohinoor600 text-base text-white mb-6">
+                              @title
+                            </p>
+                            <span class="font-IRANSansWebFaNum300 relative z-10 text-sm text-white mb-6 block">
+                              @prp_7249
+    
+                            </span>
+    
+                            <span
+                                class="flex items-center font-Kohinoor400 relative z-10 text-sm text-white gap-x-1">
+                                مشاهده
+                                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1L5 4.5L9 8" stroke="#FAFAFA" />
+                                    <path d="M5 1L1 4.5L5 8" stroke="#FAFAFA" />
+                                </svg>
+    
+                            </span>
+                        </div>
+    
+                        <div
+                            class="overDesc translate-y-[100%] duration-1000 py-10 px-5 bg-gold-pr absolute inset-0 z-1 group-hover/hoverTopFaces:translate-y-0">
+                            <h5 class="font-Kohinoor600 text-base text-gray-light mb-5">
+                              @title
+                            </h5>
+                            <div class="para font-Kohinoor400 text-sm text-justify text-gray-light">
+                                <p>
+                                    @substr
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                    
+                </face>
+            </basis>

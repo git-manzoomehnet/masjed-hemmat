@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="assets/css/outputDesktop.css">
+</head>
+<body class="bg-gray-100">
+   <header class="fixed top-0 w-full shadow-[0px_4px_6px_-1px_#0000001A] z-40" dir="rtl">
+    <div class="topS bg-topHeader ">
+        <div class="w-90p mx-auto py-2.5 flex gap-x-4">
+
+            <div class="lang relative">
+                <button id="language-button" class="bg-gold-pr text-white w-[105px] h-[29px] rounded-lg flex justify-center cursor-pointer items-center font-Kohinoor400 text-sm">
+                    <span class="ml-2">
+                       <img src="assets/images/arrowDlang.svg" alt="lang">
+                   </span>
+                    English
+                </button>
+                <ul id="language-dropdown" class="absolute right-0 mt-2 px-5 py-4 bg-topHeader top-7 rounded-md hidden shadow-[4px_4px_15.6px_1px_#F1F1F1]">
+                    <li class="border-b border-b-white"><a href="#" class="block px-4 py-2 font-Kohinoor300 text-sm">فارسی</a></li>
+                    <li class="border-b border-b-white"><a href="#" class="block px-4 py-2 font-Kohinoor300 text-sm">English</a></li>
+                </ul>
+            </div>
+            <div class="line w-px bg-white h-auto shrink-0"></div>
+            <div class="socials flex items-center">
+                <ul class="flex items-center gap-x-4">
+                    <li>
+                        <a href="" title="telegram">
+                            <img src="assets/images/telegram.svg" alt="telegram">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" title="youtube">
+                            <img src="assets/images/youtube.svg" alt="youtube">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" title="instagram">
+                            <img src="assets/images/instagram.svg" alt="instagram">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" title="facebook">
+                            <img src="assets/images/facebook.svg" alt="facebook">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottomS bg-white py-2.5">
+        <div class="w-90p mx-auto  flex justify-between items-center">
+            <div class="rSide flex items-center gap-x-6">
+                <ul class="flex flex-row-reverse justify-end gap-x-6">
+                    <li class="py-3">
+                        <a class="font-Kohinoor400 text-base text-black" href="">تماس با ما</a>
+                    </li>
+                    <li class="py-3">
+                        <a class="font-Kohinoor400 text-base text-black" href="">چهره های ماندگار</a>
+                    </li>
+                    <li class="relative flex items-center justify-center group/hoverMenu">
+                        <a class="font-Kohinoor400 text-base text-black" href="">درباره مسجد</a>
+                        <div class="magaMenu absolute top-16 w-max duration-1000 opacity-0 -translate-y-[100px] group-hover/hoverMenu:translate-y-0 group-hover/hoverMenu:z-1 group-hover/hoverMenu:opacity-100 -z-1 scale-y-0 group-hover/hoverMenu:scale-y-100">
+                            <svg class="mx-auto" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.5 0L12.9952 11.25H0.00480938L6.5 0Z" fill="#B8930C"/>
+                                </svg>
+                                    <ul class=" px-2.5 py-10 border-t-[3px] border-t-gold-pr bg-white">
+                                        <li class="py-3 px-5 mb-1">
+                                            <a   href="" class="font-Kohinoor400 text-sm text-gray-matn duration-500 hover:font-Kohinoor500">چهره های ماندگار</a>
+                                        </li>
+                                    </ul>
+                        </div>
+                    </li>
+                    <li class="py-3">
+                        <a class="font-Kohinoor400 text-base text-black" href="">سیمای مسجد </a>
+                    </li>
+                    <li class="py-3">
+                        <a class="font-Kohinoor400 text-base text-black" href="">نگارخانه</a>
+                    </li>
+                    <li class="py-3">
+                        <a class="font-Kohinoor400 text-base text-black" href="">منشور مسجد</a>
+                    </li>
+                    <li class="py-3">
+                        <a class="font-Kohinoor400 text-base text-black" href="">رویدادها</a>
+                    </li>
+                    <li class="py-3">
+                        <a class="font-Kohinoor400 text-base text-black" href="">برنامه ها</a>
+                    </li>
+                    <li class="py-3">
+                        <a class="font-Kohinoor400 text-base text-black" href="">صفحه نخست</a>
+                    </li>
+                </ul>
+    
+                <div class="searchBtn cursor-pointer">
+                    <img src="assets/images/search.svg" alt="search">
+                </div>
+            </div>
+
+            <div class="logo">
+                <a href="/" title="home page">
+                    <img src="assets/images/logo (1).png" alt="home page">
+                </a>
+            </div>
+
+        </div>
+    </div>
+   </header>
+
+   <div class="searchPop flex items-center justify-center bg-white fixed top-0 left-0 w-svw h-svh scale-0 duration-1000">
+       <div class="closeSearchForm mx-auto left-0 w-[69%] max-w-[1102px] absolute flex cursor-pointer gap-x-3 right-0 top-[223px]">
+           <img src="assets/images/closeSearch.svg" alt="closeSearchForm">
+
+           <span class="font-Kohinoor400 text-sm text-gold-pr">
+               بستن جستجو
+           </span>
+       </div>
+    <div class="w-[69%] max-w-[1102px] mx-auto flex items-center justify-center relative">
+        <form action="" class="w-full flex border-b border-b-gold-pr">
+            <input class="w-full px-1 py-6 focus:border-0 focus-visible:border-0 border-0 outline-0 font-Kohinoor500 text-sm text-black placeholder:font-Kohinoor500 placeholder:text-sm placeholder:text-black" type="search" placeholder="جستجو کنید...">
+            <button type="submit" class="cursor-pointer">
+                <img src="assets/images/searchBtn.svg" alt="search">
+            </button>
+        </form>
+
+    </div>
+   </div>
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdown = document.getElementById('language-dropdown');
+        const button = document.getElementById('language-button');
+
+        button.addEventListener('click', function(event) {
+            dropdown.classList.toggle('hidden');
+            event.stopPropagation();
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+        dropdown.querySelectorAll("li").forEach(element => {
+            element.addEventListener("click" , function(params) {
+                dropdown.classList.add('hidden');
+                event.stopPropagation();
+            })
+        });
+    });
+
+    let searchBtn = document.querySelector(".searchBtn")
+    let searchPop = document.querySelector(".searchPop")
+    let closeSearchForm = document.querySelector(".closeSearchForm")
+
+    searchBtn.addEventListener("click" , function (params) {
+        searchPop.style.transform="scale(1)"
+        searchPop.style.scale="1"
+    })
+    closeSearchForm.addEventListener("click" , function (params) {
+        searchPop.style.transform="scale(0)"
+        searchPop.style.scale="0"
+    })
+</script>
+</body>
+</html>

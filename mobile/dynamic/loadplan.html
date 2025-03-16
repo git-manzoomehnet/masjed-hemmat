@@ -1,0 +1,60 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]"> <member name="plansview" type="view"/> </basis>
+
+<basis core="print" datamembername="db.plansview">
+                   
+    <face filter="TypeID=150">
+        
+ 
+
+
+        <div class="mainTitle mt-2 relative mb-7">
+            <img class="mb-1 mx-auto" src="[##cms.cms.cdn##]/images/bgTitle-mobile.png" alt="background title">
+
+            <h1 class="text-center font-Kohinoor500 z-1 text-lg">
+                @Answer
+            </h1>
+        </div>
+    </face>
+</basis>
+
+<div class="infos">
+    <basis core="print" datamembername="db.plansview">
+        <layout>
+            <ul>
+                <h3 class="font-Kohinoor600 text-base mb-6">
+                    اطلاعات کلی
+                </h3>
+                @child
+            </ul>
+        </layout>
+        
+        <face filter="TypeID=250">
+            
+            <li class="py-5 px-3 even:bg-gold-pr/[0.25] flex gap-x-2.5 border-b border-b-gold-pr items-center">
+                <span class="font-Kohinoor300 text-sm">
+                   @text
+                </span>
+                <div class="font-Kohinoor400  text-base text-gray-matn">
+                   @largetext
+                </div>
+            </li>
+        </face>
+    </basis>
+
+
+    <basis core="print" datamembername="db.plansview">
+        <layout>
+            <h4 class="font-Kohinoor600 mt-12 mb-4 text-base">
+                توضیحات تکمیلی
+            </h4>
+            <div class="para font-Kohinoor400 text-sm leading-[30px] text-gray-matn text-justify">
+             
+                @child
+            </div>
+        </layout>
+     
+        <face filter="TypeID=129">
+            @Answer
+        </face>
+    </basis>
+</div>

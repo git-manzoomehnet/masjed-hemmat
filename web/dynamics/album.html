@@ -1,0 +1,110 @@
+<basis core="dbsource" source="media" name="basisName" lid="1" catid="2290"> <member type="list" name="banner-gallery" perpage="10" pageno="1"/> </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213219"> <member name="list-gallery" size="418x435" propertyid="7249" type="list" link="gallery.bc"/> </basis>
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گالری مسجد همت</title>
+    <meta name="description" content="گالری تصاویر مسجد همت تجریش">
+    <basis core="call" file="styles.inc" />
+
+</head>
+
+<body>
+    <main class="albumList" dir="rtl">
+        <basis core="call" file="header.inc" />
+        <basis core="call" file="side-content.inc" />
+
+        <section class="section1">
+            <basis core="print" datamembername="basisName.banner-gallery">
+                
+                <face>
+                        <div class="imgS h-[690px]">
+                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" class="w-full h-full object-cover">
+                    </div>
+                        
+                    </face>
+                </basis>
+        </section>
+
+        <div class="breadCrumb w-90p mx-auto mt-4">
+            <ul class="flex items-center py-5 gap-x-2.5">
+                <li class="flex items-center gap-x-2.5">
+                    <a href="/" class="flex items-center gap-x-4">
+                        <img src="[##cms.cms.cdn##]/images/home.svg" alt="home">
+                        <span class="font-Kohinoor400 text-sm text-grayn">
+                            صفحه نخست
+                        </span>
+                    </a>
+                    <img src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="">
+                </li>
+                <li>
+                        <span class="font-Kohinoor400 text-sm text-grayn">
+                            نگارخانه
+                        </span>
+                </li>
+            </ul>
+        </div>
+        <section class="section2 pb-14">
+            <div class="mainTitle flex items-center justify-center mt-2 relative">
+                <img src="[##cms.cms.cdn##]/images/bgTitle.png" alt="background title">
+
+                <h1 class="absolute font-Kohinoor600 z-1 text-xl">
+                    نگارخانه
+                </h1>
+            </div>
+
+            <div class="albumContainer mt-11 w-90p mx-auto grid grid-cols-3 gap-20">
+               <basis core="print" datamembername="db.list-gallery">
+                
+                   <else-layout>
+                       <div class="para font-Kohinoor400 text-base">
+                        <p>
+                            متاسفانه آلبومی موجود نیست.
+                        </p>
+                       </div>
+                       
+                   </else-layout>
+                   <face>
+                       <div class="albumBox duration-500 shadow-[0px_9px_15.6px_0px_#E8E8E8] pb-5 rounded-tl-3xl rounded-tr-3xl overflow-hidden">
+                           <a class="h-full flex flex-col justify-between" href="/@link" title="@title">
+                               <div class="imgS">
+                                   <img class="w-full" src="[##cms.cms.cdn##]/@00418X00435prp" alt="@title">
+                               </div>
+       
+                               <div class="descS bg-gray-light py-5  px-3 border-b border-b-gold-pr flex flex-col justify-between" style="width: 100%;height: -moz-available;height: -webkit-fill-available;height: fill-available;">
+                                   <h2 class="font-Kohinoor600 text-base mb-6">
+                                     @title
+                                   </h2>
+       
+                                   <div class="flex items-center justify-between">
+                                       <span class="flex items-center gap-x-1 font-Kohinoor400 text-sm text-gold-pr" title="@title">
+                                           مشاهده 
+               
+                                           <img src="[##cms.cms.cdn##]/images/readMorev.svg" alt="@title">
+                                       </span>
+       
+                                       <span class="font-IRANSansWebFaNum300 text-sm text-black">
+                                        @prp_7249
+                                       </span>
+                                   </div>
+                               </div>
+                           </a>
+                       </div>
+                       
+                   </face>
+               </basis>
+            </div>
+        </section>
+
+        <basis core="call" file="footer.inc" />
+
+    </main>
+
+    <basis core="call" file="scripts.inc" />
+
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1" >
+    <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]" >
+	<member request="navigationcat" type="tree" name="navigationcat" postsql="select * from [db.navigationcat] where Parentcatid not in (213191,213206,213254)"  />
+</basis>
+<basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]" > 
+    <member request="json-ld" type="scalar" name="fq" /> 
+   </basis>
+
+
+   <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]"> <member name="topfaceGallery" type="list" format="4"/> </basis>
+ <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]"> <member name="topface" type="view"/> </basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]"> <member name="relatedfaces" type="list" blgid="222" size="327x380"  link="topface.bc" propertyid="7249,7244" postsql=" select *, SUBSTR(prp_7244, 1,230-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 230)))) || '...' as substr from [db.relatedfaces]"/> </basis>
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesktop.css">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]"/>
+
+</head>
+
+<body>
+    <main class="topface" dir="rtl">
+        <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]"/>
+        <basis core="call" file="side-content.inc" pageindex="[##cms.cms.pageindex##]"/>
+
+        <section class="section1">
+            <div class="imgS">
+                <img src="[##cms.cms.cdn##]/images/mobile-topfaces.jpg" alt="@name" class="w-full">
+            </div>
+        </section>
+
+
+
+        
+        <div class="breadCrumb w-90p mx-auto mt-2">
+
+
+
+            <a href="/" class="">
+                <img class="inline w-[21px]" src="[##cms.cms.cdn##]/images/home.svg" alt="home">
+                <span class="font-Kohinoor400 text-[10px] inline text-grayn">
+                    صفحه نخست
+                </span>
+            </a>
+            <img class="inline mx-2 w-[3px]" src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="seperator">
+            <a class="inline" href="/gallery-list.bc" title="@title">
+                <span class="font-Kohinoor400 text-[10px] text-grayn">
+                    چهره های ماندگار
+
+                </span>
+            </a>
+            <img class="inline mx-2 w-[3px]" src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="seperator">
+
+     
+
+            <basis core="print" datamembername="db.navigationcat">
+                    
+                <face filter="RowNumber=1">
+                        <a class="inline" href="/topface-list.bc?catid=@catid" title="@title">
+                            <span class="font-Kohinoor400 text-[10px] text-grayn">
+                                @title
+                            </span>
+                        </a>
+                        <img class="inline mx-2 w-[3px]" src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="">
+                    
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.topface">
+                <face filter="TypeID=150">
+                            <span class="font-Kohinoor400 inline text-[10px] text-grayn">
+                                @Answer
+                            </span>
+                    </face>
+                </basis>
+
+        </div>
+
+        <nav class="sticky mt-3 mb-5 top-[128px] z-10 bg-white navList overflow-y-auto">
+            <ul class="flex">
+              
+            </ul>
+        </nav>
+        <section class="section2 mb-9 pt-6 pb-6 w-90p mx-auto shadow-[4px_4px_15.6px_1px_#F1F1F1] px-3">
+           <basis core="print" datamembername="db.topface">
+              
+               <face filter="TypeID=150">
+                   <h1 class="mb-4 font-Kohinoor500 text-lg">
+@Answer
+                   </h1>
+                   
+               </face>
+           </basis>
+<basis core="print" datamembername="db.topface">
+ 
+    <face filter="prpID=7249">
+        <div class="date mb-3">
+         <span class="font-IRANSansWebFaNum300 text-sm">
+             @Answer
+         </span>
+        </div>
+        
+    </face>
+</basis>
+            <div class="mb-7">
+                <basis core="print" datamembername="db.topfaceGallery">
+              
+                    <face filter="ord=1000">
+                        <div class="imgS mb-2 shrink-0 rounded-tr-[25px] rounded-tl-[25px] overflow-hidden">
+                            <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                        </div>
+                        
+                    </face>
+                </basis>
+
+                <div class="rSec">
+                    <basis core="print" datamembername="db.topface">
+                        <layout>
+                           
+                            @child
+                        </layout>
+                     
+                        <face filter="TypeID=129">
+                            <div class="para leading-[30px] mb-6 font-Kohinoor400 text-sm text-justify text-gray-matn">
+                               @largetext
+                            </div>
+                            
+                        </face>
+                    </basis>
+                
+                </div>
+            </div>
+
+            <basis core="print" datamembername="db.topface">
+              
+                <face filter="TypeID=250">
+                    <h2 class="font-Kohinoor600 text-sm text-gray-matn mb-5">
+                       @text
+                    </h2>
+                    <div class="para leading-[30px] font-Kohinoor400 text-sm text-justify text-gray-matn mb-5">
+                        @largetext
+                    </div>
+                    
+                </face>
+            </basis>
+
+          
+        </section>
+
+        <basis core="print" datamembername="db.relatedfaces">
+            <layout>
+                <section class="section3 mb-10 w-90p mx-auto">
+                    <div class="mainTitle mt-2 mb-6 relative">
+                        <img class="mb-1 mx-auto" src="[##cms.cms.cdn##]/images/bgTitle-mobile.png" alt="background title">
+    
+                        <h3 class="text-center font-Kohinoor500 z-1 text-lg">
+                            چهره های ماندگار
+                        </h3>
+                    </div>
+                    <div class="swiper topFaceSlider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                          
+                            @child
+                        </div>
+        
+                    </div>
+                    <div class="btns mt-14 flex items-center justify-center gap-x-1">
+                        <div class="prevTopFDef cursor-pointer">
+        
+                            <img class="w-[64px]" src="[##cms.cms.cdn##]/images/prevTopFDef.svg" alt="nextTopFDef">
+                        </div>
+                        <div class="nextTopFDef cursor-pointer">
+                            <img class="w-[64px]" src="[##cms.cms.cdn##]/images/nextTopFDef.svg" alt="nextTopFDef">
+                        </div>
+                    </div>
+                </section>
+             
+            </layout>
+      
+            <face>
+                <div class="swiper-slide">
+                    <div class="faceBox shadow-[3.13px_3.13px_12.2px_0.78px_#BFBFBF] mb-9 rounded-3xl overflow-hidden">
+                        <a href="/@link" title="@title"
+                        class="relative block group/hoverTopFaces shadow-[4px_4px_15.6px_1px_BFBFBF]">
+                        <div class="imgS">
+                            <img class="w-full h-full object-cover"
+                                src="[##cms.cms.cdn##]/@00327X00380prp" alt="@title">
+                        </div>
+                    
+                        <div
+                            class="titles py-6 px-4 bg-gradient-to-b from-gold-pr/[0.44] to-gold-sc absolute bottom-0 w-full">
+                            <p class="font-Kohinoor600 text-sm text-white mb-5">
+                              @title
+                            </p>
+                            <span class="font-IRANSansWebFaNum300 relative z-10 text-sm text-white mb-5 block">
+                              @prp_7249
+                    
+                            </span>
+                    
+                            <span
+                                class="flex items-center font-Kohinoor400 relative z-10 text-sm text-white gap-x-1">
+                                مشاهده
+                                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1L5 4.5L9 8" stroke="#FAFAFA" />
+                                    <path d="M5 1L1 4.5L5 8" stroke="#FAFAFA" />
+                                </svg>
+                    
+                            </span>
+                        </div>
+                    
+                     
+                    </a>
+                    </div>
+                </div>
+            </face>
+        </basis>
+        <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]"/>
+
+
+    </main>
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]"/>
+
+    <script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+    <script src="[##cms.cms.cdn##]/js/scroll.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.5.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/topFaceShow-mobile.js"></script>
+    <script type="application/ld+json"> 
+        [##json.fq.column1##] 
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,579 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2373360"> <member name="def-sec1" type="view"/> </basis>
+ <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213209"> <member name="def-planList" type="list" link="plan.bc"/> </basis>
+<basis core="dbsource" source="media" name="db" lid="1" catid="2277" > <member type="list" name="rightmanshoor" perpage="10" pageno="1"/> </basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213251"> <member name="def-manshoor" type="list" propertyid="7244" link="manshoor.bc" /> </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2373363"> <member name="def-quran" type="view"/> </basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2373363"> <member name="def-sec3" type="list"/> </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213213"> <member name="def-event" type="list" size="314x238" propertyid="7244,7249" postsql=" select *, SUBSTR(prp_7244, 1,230-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 230)))) || '...' as substr from [db.def-event]" link="event.bc"/> </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213254"> <member name="def-topfaces" link="topface.bc" type="list" size="418x486" propertyid="7244,7249" postsql=" select *, SUBSTR(prp_7244, 1,230-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 230)))) || '...' as substr from [db.def-topfaces]"/> </basis>
+
+
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسجد همت تجریش  </title>
+    <meta name="description" content="مسجد همت تجریش">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <basis core="call" file="styles.inc" />
+   
+      
+</head>
+
+<body>
+
+    <div class="homePage" dir="rtl">
+        <basis core="call" file="header.inc" />
+        <basis core="call" file="side-content.inc" />
+
+        <section class="section1 mb-[146px] h-svh gap-x-10 flex items-center justify-end">
+            <div class="rightSection w-[34%] pr-[5%] max-w-[415px]">
+                <h1 class="font-Kohinoor600 text-lg mb-8">
+                    مسجد جامع همت
+                </h1>
+
+                <div class="timeBox px-2 py-4 border border-gold-pr/[0.5] rounded-[16px] flex gap-x-2 items-baseline">
+                    <img class="translate-y-[5px]" src="[##cms.cms.cdn##]/images/clock.svg" alt="clock">
+
+                    <div class="descBox">
+                        <basis core="print" datamembername="db.def-sec1">
+                           
+                            <face filter="TypeID=150">
+                                <p class="font-Kohinoor500 text-sm text-gold-pr mb-4">
+                                   @Answer
+                                </p>
+                                
+                            </face>
+                        </basis>
+                        <ul>
+                            <basis core="print" datamembername="db.def-sec1">
+                        
+                                <face filter="TypeID=250">
+                                    <li class="flex items-center gap-x-2.5 mb-4 last:mb-0">
+                                        <span class="font-Kohinoor300 text-sm text-gold-pr">
+                                           @text
+                                        </span>
+                                        <div class="font-IRANSansWeb500 text-sm text-gold-pr">
+                                          @largetext
+                                        </div>
+                                    </li>
+                                    
+                                </face>
+                            </basis>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="leftSection w-[66%] h-full" dir="ltr">
+                <div class="research-inner-2">
+                     <div dir="rtl" class="research-list !bg-cover hover:!bg-[length:135vw] bg-center" style="background: url([##cms.cms.cdn##]/images/def-tarhejame.png);">
+                        <div class="research-list-img">
+                            <div class="research-list-overlay">
+
+                                <h5 class="font-Kohinoor600 text-lg text-white mb-5">
+                                    طرح جامع مسجد
+                                </h5>
+                             
+                                <a class="flex items-center gap-x-1.5 mt-5" href="/tarhejame-masjed.bc">
+                                    <span class="font-Kohinoor400 text-sm text-white">
+                                        بیشتر
+                                    </span>
+                                    <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L5 4.5L9 8" stroke="white" />
+                                        <path d="M5 1L1 4.5L5 8" stroke="white" />
+                                    </svg>
+
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div dir="rtl" class="research-list !bg-cover hover:!bg-[length:135vw] bg-center" style="background: url([##cms.cms.cdn##]/images/def-plan.png);">
+                        <div class="research-list-img">
+                            <div class="research-list-overlay">
+
+                                <h5 class="font-Kohinoor600 text-lg text-white mb-5">
+                                    برنامه ها
+                                </h5>
+                                <div class="slct_option">
+                                    <div class="banner-hover-list">
+                                        <basis core="print" datamembername="db.def-planList">
+                                          
+                                            <face>
+                                                <a href="/@link" class="banner-box w-[130px] min-h-[153px] rounded-[16px] border border-white flex flex-col items-center justify-center px-2">
+                                                    <div class="imgS mb-4">
+                                                        <img class="w-[36px] grayscale-100" src="[##cms.cms.cdn##]/@image" alt="@name">
+                                                    </div>
+                                                    <span class="font-Kohinoor500 text-sm text-white text-center">
+                                                       @title
+                                                    </span>
+                                                </a>
+                                                
+                                            </face>
+                                        </basis>
+
+                                    </div>
+
+                                </div>
+                                <a class="flex items-center gap-x-1.5 mt-5" href="/plan.bc">
+                                    <span class="font-Kohinoor400 text-sm text-white">
+                                        بیشتر
+                                    </span>
+                                    <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L5 4.5L9 8" stroke="white" />
+                                        <path d="M5 1L1 4.5L5 8" stroke="white" />
+                                    </svg>
+
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                 
+                    <div dir="rtl" class="research-list !bg-cover hover:!bg-[length:135vw] bg-center" style="background: url([##cms.cms.cdn##]/images/def-diagram.png);">
+                        <div class="research-list-img">
+                            <div class="research-list-overlay">
+
+                                <h5 class="font-Kohinoor600 text-lg text-white mb-5">
+                                    دیاگرام روابط فضایی
+                                </h5>
+                              
+                                <a class="flex items-center gap-x-1.5 mt-5" href="/diagram.bc">
+                                    <span class="font-Kohinoor400 text-sm text-white">
+                                        بیشتر
+                                    </span>
+                                    <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L5 4.5L9 8" stroke="white" />
+                                        <path d="M5 1L1 4.5L5 8" stroke="white" />
+                                    </svg>
+
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <section class="section2 mb-[147px] gap-x-12 flex w-90p mx-auto">
+            <div class="rSide w-[50%]">
+                <basis core="print" datamembername="db.rightmanshoor">
+                   
+                    <face>
+                        <a href="/manshoor.bc" class="relative block rounded-[18px] h-full overflow-hidden after:absolute after:inset-0 after:bg-gradient-to-r after:from-black/[0.0] after:to-black/[0.55] shadow-[0px_9px_15.6px_1px_#F1F1F1]">
+                            <div class="imgS h-full">
+        
+                                <img class="h-full object-cover w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@title">
+                            </div>
+                            <div class="overD absolute inset-0 w-full h-full py-9 px-8 z-1 flex flex-col justify-between">
+                                <div class="imgS bg-white rounded-full aspect-square px-4 py-6 w-fit">
+                                    <img src="[##cms.cms.cdn##]/images/manshorIcon.png" alt="@name">
+                                </div>
+        
+                                <div class="titles">
+                                    <h2 class="font-Kohinoor600 text-lg mb-5 text-gray-light">
+                                      @name
+                                    </h2>
+        
+                                    <div
+                                        class="flex items-center justify-center gap-x-1.5 w-[218px] h-[49px] bg-gold-pr border border-white">
+                                        <span class="font-Kohinoor400 text-sm text-white">
+                                            مشاهده کامل منشور
+                                        </span>
+                                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 1L5 4.5L9 8" stroke="white" />
+                                            <path d="M5 1L1 4.5L5 8" stroke="white" />
+                                        </svg>
+        
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        
+                    </face>
+                </basis>
+            </div>
+            <div class="lSide w-[50%] grid gap-12 grid-cols-2 grid-rows-2">
+                <basis core="print" datamembername="db.def-manshoor">
+                 
+                    <face>
+                        <div class="mBox max-h-[298px] group/mBox hover:bg-gold-pr duration-500 shadow-[0px_5px_21.1px_10px_#D8D8D840] py-4 px-6 rounded-2xl flex flex-col justify-between border border-gold-pr/[0.25]">
+                            <a href="/@link">
+                            <div
+                                class="imgS mb-8 p-4 w-fit aspect-square rounded-full bg-gold-pr/[0.25] max-w-[109px] duration-500 group-hover/mBox:bg-topHeader">
+                                <img class="group-hover/mBox:invert-100 group-hover/mBox:brightness-0 duration-500"
+                                    src="[##cms.cms.cdn##]/@image" alt="@title">
+                            </div>
+                            <div class="titles">
+                                <span
+                                    class="font-Kohinoor500 block text-sm text-gold-pr mb-6 group-hover/mBox:text-white duration-500">
+                                    @title
+                                </span>
+                                <h3 class="font-Kohinoor500 text-lg mb-6 group-hover/mBox:text-white duration-500">
+                                   @prp_7244
+                                </h3>
+                                <a href="/@link"
+                                    class="font-Kohinoor400 items-center gap-x-1.5 text-gold-pr flex text-sm group-hover/mBox:text-white duration-500">
+                                    مشاهده
+        
+                                    <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L5 4.5L9 8" stroke="white" />
+                                        <path d="M5 1L1 4.5L5 8" stroke="white" />
+                                    </svg>
+        
+                                </a>
+                            </div>
+                        </a>
+                        </div>
+                        
+                    </face>
+                </basis>
+
+            </div>
+        </section>
+        <section class="section3 mb-9 w-90p mx-auto max-w-[1021px]">
+            <div class="title text-center flex flex-col items-center justify-center mb-16">
+                <img src="[##cms.cms.cdn##]/images/baqTitle.png" alt="quran">
+                <basis core="print" datamembername="db.def-quran">
+                
+                    <face filter="TypeID=128">
+                        <h2 class="mt-1 font-Kohinoor700 text-2xl">
+                           @Answer
+                        </h2>
+                        
+                    </face>
+                </basis>
+            </div>
+
+            <div class="quran flex gap-x-10 items-center max-w-[1021px] mx-auto">
+                <div class="rSide">
+                    <div
+                        class="imgS relative aspect-square rounded-[25px] after:absolute after:inset-0 overflow-hidden after:bg-topHeader/[0.35]">
+                   <basis core="print" datamembername="db.def-sec3">
+                     
+                       <face filter="format=4">
+                           
+                           <img src="[##cms.cms.cdn##]/@largeIMG" alt="islamic">
+                       </face>
+                   </basis>
+                   
+                    </div>
+                </div>
+                <div class="lSide w-full">
+
+                    <basis core="print" datamembername="db.def-sec3">
+                        <layout>
+                            @child
+                        </layout>
+                       
+                        <face filter="format=7">
+                            <p class="font-Kohinoor400 text-2xl mb-6">
+                              @name
+                            </p>
+                            <div class="musicLayer h-[64px] w-full" style="background: url([##cms.cms.cdn##]/images/musicLayer.png);">
+                                
+                                
+                            </div>
+                            <div class="musicPlayer mt-6">
+                                <!-- کنترل‌های پلیر -->
+                                <div class="flex items-center gap-x-5">
+                                  
+                                    <!-- نوار پیشرفت و زمان -->
+                                    <div class="flex-1" dir="ltr">
+                                        <div class="flex justify-between text-xs text-gray-600 mb-3">
+                                            <span id="current-time" class="font-Kohinoor500 text-sm text-black">00:00</span>
+                                            <span id="total-duration" class="font-Kohinoor500 text-sm text-black">00:00</span>
+                                        </div>
+                                        <input type="range" id="seek-bar" class="w-full cursor-pointer" min="0" value="0"
+                                            step="1">
+        
+        
+        
+                                              <!-- کنترل سرعت -->
+                                <div class="flex items-center justify-start mt-5 space-x-2">
+                                    <select id="speed-control" class="outline-0 appearance-none cursor-pointer rounded font-Kohinoor500 text-sm">
+                                        <option value="0.5">x 0.5</option>
+                                        <option value="1" selected>x 1</option>
+                                        <option value="1.5">x 1.5</option>
+                                        <option value="2">x 2</option>
+                                    </select>
+                                </div>
+                                    </div>
+                                      <!-- دکمه Play/Pause -->
+                                      <button id="play-btn" class="w-[68px] h-[68px] flex items-center justify-center border-4 cursor-pointer border-gold-pr rounded-full">
+                                        <svg id="play-icon" class="w-[50px] h-[50px] text-gold-pr" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                        <svg id="pause-icon" class="w-[50px] h-[50px] text-gold-pr hidden" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <path d="M6 5h4v14H6zm8 0h4v14h-4z" />
+                                        </svg>
+                                    </button>
+            
+                                </div>
+            
+                              
+            
+                                <!-- پلیر صوتی (مخفی) -->
+                                <audio id="audio-player" class="hidden">
+                                    <source
+                                        src="[##cms.cms.cdn##]/@largeIMG"
+                                        type="audio/mp3">
+                                </audio>
+        
+                            </div>
+                            
+                        </face>
+                    </basis>
+                </div>
+            </div>
+<basis core="print" datamembername="db.def-sec3">
+  
+    <face filter="format=7">
+        <a id="downloadBtn" href="[##cms.cms.cdn##]/@largeIMG" target="_blank" download class="w-[218px] gap-x-1.5 duration-500 h-[49px] mx-auto mt-10 bg-gold-pr flex items-center justify-center group/btn hover:bg-transparent border border-gold-pr">
+            
+            <span class="font-Kohinoor400 text-sm text-white group-hover/btn:text-gold-pr duration-500">
+                دانلود
+            </span>
+    
+            <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="group-hover/btn:stroke-gold-pr duration-500" d="M1 0.5L4.5 4.5L8 0.5" stroke="white"/>
+                <path class="group-hover/btn:stroke-gold-pr duration-500" d="M1 4.5L4.5 8.5L8 4.5" stroke="white"/>
+                </svg>
+                
+        </a>
+        
+    </face>
+</basis>
+
+        </section>
+        <section class="section4 relative pb-14 mb-20 bg-cover bg-no-repeat bg-center after:absolute after:inset-0 after:w-full after:h-full after:bg-[linear-gradient(90deg,_rgba(255,255,255,0.2)_2.75%,_rgba(255,255,255,0.94947)_14.31%,_rgba(255,255,255,0.2)_52.69%,_rgba(255,255,255,0.94947)_72.69%,_#FFFFFF_80.55%,_rgba(255,255,255,0.2)_98%)]" style="background: url([##cms.cms.cdn##]/images/bgEventDef.png);">
+            <div class="title relative z-1 flex items-center gap-x-4 pt-8 mb-4 w-90p mx-auto">
+                <img src="[##cms.cms.cdn##]/images/titleIcon.svg" alt="topFaces">
+
+                <h2 class="font-Kohinoor600 text-lg">
+                    رویدادها و رسانه مسجد جامع همت
+                                    </h2>
+            </div>
+            <div class="flex relative z-1 w-90p mx-auto gap-x-9">
+                    <div class="rSide 2xl:w-[51%] xl:w-[48%]">
+                        <div class="top mb-9">
+                            <a href="/gallery-list.bc" class="shadow-[0px_9px_15.6px_1px_#F1F1F1]">
+                                <div class="imgS h-[248px]">
+                                    <img class="w-fit h-full object-cover" src="[##cms.cms.cdn##]/images/def-gallery.jpg" alt="gallery">
+                                </div>
+                                <div class="title flex px-5 py-4 justify-between bg-white">
+                                    <h5 class="font-Kohinoor500 text-base">
+                                        نگارخانه
+                                    </h5>
+
+                                    <span class="flex items-center gap-x-1.5 font-Kohinoor400 text-sm text-gold-pr">
+
+                                        مشاهده 
+                                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 1L5 4.5L9 8" stroke="#B8930C"/>
+                                            <path d="M5 1L1 4.5L5 8" stroke="#B8930C"/>
+                                            </svg>
+                                            
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="btm grid grid-cols-2 gap-9">
+                            <a href="/simaye-masjed.bc" class="shadow-[0px_9px_15.6px_1px_#F1F1F1]">
+                                <div class="imgS h-[314px]">
+                                    <img class="w-fit object-cover h-full" src="[##cms.cms.cdn##]/images/def-sima.jpg" alt="simaye-masjed">
+                                </div>
+                                <div class="title flex px-5 py-4 justify-between bg-white">
+                                    <h5 class="font-Kohinoor500 text-base">
+                                        سیمای مسجد 
+                                    </h5>
+
+                                    <span class="flex items-center gap-x-1.5 font-Kohinoor400 text-sm text-gold-pr">
+
+                                        مشاهده 
+                                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 1L5 4.5L9 8" stroke="#B8930C"/>
+                                            <path d="M5 1L1 4.5L5 8" stroke="#B8930C"/>
+                                            </svg>
+                                            
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="/event-list.bc" class="shadow-[0px_9px_15.6px_1px_#F1F1F1]">
+                                <div class="imgS h-[314px]">
+
+                                    <img class="w-fit object-cover h-full" src="[##cms.cms.cdn##]/images/def-event.jpg" alt="event">
+                                </div>
+                                <div class="title flex px-5 py-4 justify-between bg-white">
+                                    <h5 class="font-Kohinoor500 text-base">
+                                        رویدادها
+                                    </h5>
+
+                                    <span class="flex items-center gap-x-1.5 font-Kohinoor400 text-sm text-gold-pr">
+
+                                        مشاهده 
+                                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 1L5 4.5L9 8" stroke="#B8930C"/>
+                                            <path d="M5 1L1 4.5L5 8" stroke="#B8930C"/>
+                                            </svg>
+                                            
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lSide 2xl:w-[49%] xl:w-[70%]">
+
+                        <basis core="print" datamembername="db.def-event">
+                          
+                            <face>
+                                <div class="eventBox mb-6 last:mb-0">
+                                  <a title="@title" href="/@link" class="flex items-center gap-x-4">
+                                      <div class="imgS shrink-0 shadow-[4px_4px_15.6px_1px_#F1F1F1]">
+                                          <span>
+                                              <img class="w-[314px] object-cover h-[221px]" src="[##cms.cms.cdn##]/@00314X00238prp" alt="@title">
+                                          </span>
+                                      </div>
+                                      <div class="info pl-5">
+                                          <h5 class="font-Kohinoor600 text-lg mb-1.5">
+                                            @title
+          
+                                          </h5>
+                                          <span class="block mb-1.5 font-IRANSansWebFaNum300 text-sm">
+                                            @prp_7249
+          
+                                          </span>
+                                          <div class="para font-Kohinoor400 text-sm text-justify text-gray-matn mb-1.5">
+                                              <p>
+@substr
+                                              </p>
+                                          </div>
+          
+                                          <p class="flex items-center  gap-x-1.5">
+                                              <span class="font-Kohinoor400 text-sm text-gold-pr">
+                                                  مشاهده بیشتر
+                                              </span>
+          
+                                              <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M9.5 1L5.5 4.5L9.5 8" stroke="#B8930C"/>
+                                                  <path d="M5.5 1L1.5 4.5L5.5 8" stroke="#B8930C"/>
+                                                  </svg>
+                                                  
+                                                </p>
+                                      </div>
+                                    </a>
+                                </div>
+                                
+                            </face>
+                        </basis>
+                     
+                    </div>
+            </div>
+        </section>
+
+
+        <basis core="print" datamembername="db.def-topfaces">
+            <layout>
+                <section class="section5 mb-16">
+                    <div class="title relative z-1 flex items-center gap-x-4  mb-10 w-90p mx-auto">
+                        <img src="[##cms.cms.cdn##]/images/titleIcon.svg" alt="topFaces">
+        
+                        <h3 class="font-Kohinoor600 text-lg">
+                            چهره های ماندگار
+                                            </h3>
+        
+        
+                                        </div>
+                                        <div class="swiper topFaceSlider">
+                                            <!-- Additional required wrapper -->
+                                            <div class="swiper-wrapper">
+                                              <!-- Slides -->
+                                           
+                                              @child
+           
+                                            </div>
+                                        
+                                          </div>
+                                          <div class="btns mt-14 flex items-center justify-center gap-x-7">
+                                            <div class="prevTopFDef cursor-pointer">
+        
+                                                <img src="[##cms.cms.cdn##]/images/prevTopFDef.svg" alt="nextTopFDef">
+                                            </div>
+                                            <div class="nextTopFDef cursor-pointer">
+                                                <img src="[##cms.cms.cdn##]/images/nextTopFDef.svg" alt="nextTopFDef">
+                                            </div>
+                                          </div>
+                </section>
+            </layout>
+
+            <face>
+                <div class="swiper-slide !w-[418px]">
+                    <div class="faceBox">
+                        <a href="/@link" title="@title"
+                        class="relative rounded-3xl overflow-hidden block group/hoverTopFaces shadow-[4px_4px_15.6px_1px_#BFBFBF]">
+                        <div class="imgS">
+                            <img class="w-full h-full object-cover"
+                                src="[##cms.cms.cdn##]/@00418X00486prp" alt="@title">
+                        </div>
+    
+                        <div
+                            class="titles py-6 px-4 bg-gradient-to-b from-gold-pr/[0.44] to-gold-sc absolute bottom-0 w-full">
+                            <p class="font-Kohinoor600 text-base text-white mb-6">
+                                @title
+                            </p>
+                            <span class="font-IRANSansWebFaNum300 relative z-10 text-sm text-white mb-6 block">
+                               @prp_7249
+    
+                            </span>
+    
+                            <span
+                                class="flex items-center font-Kohinoor400 relative z-10 text-sm text-white gap-x-1">
+                                مشاهده
+                                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1L5 4.5L9 8" stroke="#FAFAFA" />
+                                    <path d="M5 1L1 4.5L5 8" stroke="#FAFAFA" />
+                                </svg>
+    
+                            </span>
+                        </div>
+    
+                        <div
+                            class="overDesc translate-y-[100%] duration-1000 py-10 px-5 bg-gold-pr absolute inset-0 z-1 group-hover/hoverTopFaces:translate-y-0">
+                            <h5 class="font-Kohinoor600 text-base text-gray-light mb-5">
+                              @title
+                            </h5>
+                            <div class="para font-Kohinoor400 text-sm text-justify text-gray-light">
+                                <p>
+                                  @substr
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                  </div>
+            </face>
+        </basis>
+        <basis core="call" file="footer.inc" />
+
+    </div>
+
+    <basis core="call" file="scripts.inc" />
+
+<script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.6.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/homePage.js"></script>
+</body>
+
+</html>

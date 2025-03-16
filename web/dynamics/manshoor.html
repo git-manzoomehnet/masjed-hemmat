@@ -1,0 +1,113 @@
+<basis core="dbsource" source="media" name="basisName" lid="1" catid="2280">
+    <member type="list" name="banner-desktop" perpage="10" pageno="1" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213214">
+    <member name="list-manshoor" TypeID="159" type="list" propertyid="7244" />
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منشور</title>
+    <meta name="description" content="منشور مسجد همت تجریش">
+    <basis core="call" file="styles.inc" />
+
+</head>
+
+<body>
+    <main class="manshoor" dir="rtl">
+        <basis core="call" file="header.inc" />
+        <basis core="call" file="side-content.inc" />
+
+        <span class="queryId" style="display: none;">[##cms.query.id##]</span>
+        <section class="section1">
+            <div class="imgS h-[690px]">
+                <basis core="print" datamembername="basisName.banner-desktop">
+                    <face>
+                        <img  src="[##cms.cms.cdn##]/@largeIMG" alt="manshoor" class="w-full h-full object-cover">
+
+                    </face>
+                </basis>
+            </div>
+        </section>
+
+        <div class="breadCrumb w-90p mx-auto mt-4">
+            <ul class="flex items-center py-5 gap-x-2.5">
+                <li class="flex items-center gap-x-2.5">
+                    <a href="/" class="flex items-center gap-x-4">
+                        <img src="[##cms.cms.cdn##]/images/home.svg" alt="home">
+                        <span class="font-Kohinoor400 text-sm text-grayn">
+                            صفحه نخست
+                        </span>
+                    </a>
+                    <img src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="">
+                </li>
+                <li>
+                    <span class="font-Kohinoor400 text-sm text-grayn">
+                        منشور مسجد
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <section class="section2">
+            <div class="mainTitle flex items-center justify-center -mt-6 relative">
+                <img src="[##cms.cms.cdn##]/images/bgTitle.png" alt="background title">
+
+                <h1 class="absolute font-Kohinoor600 z-1 text-xl">
+                    منشور مسجد
+                </h1>
+            </div>
+
+            <div class="flex mb-28 flex-wrap mt-16 gap-x-10 gap-y-7 w-90p mx-auto justify-center">
+
+                <basis core="print" datamembername="db.list-manshoor">
+
+                    <face>
+                        <div data-topFace="@id"
+                            class="filterBox filterBtn w-[130px] group/filterBox p-4 rounded-2xl border border-gold-pr text-center cursor-pointer hover:bg-gold-pr [&.activeFilterBtn]:bg-gold-pr duration-1000 ">
+                            <div class="imgS flex items-center justify-center">
+                                <img class="group-hover/filterBox:brightness-0 group-hover/filterBox:invert-100 group-[&.activeFilterBtn]/filterBox:brightness-0 group-[&.activeFilterBtn]/filterBox:invert-100 duration-1000 "
+                                    src="[##cms.cms.cdn##]/@type_159" alt="@title">
+                            </div>
+                            <span
+                                class="block mt-4 font-Kohinoor500 text-sm text-gold-pr mb-1 group-hover/filterBox:text-white group-[&.activeFilterBtn]/filterBox:text-white duration-1000">
+                                @title
+                            </span>
+                            <p
+                                class="font-Kohinoor500 text-sm text-gold-pr group-hover/filterBox:text-white group-[&.activeFilterBtn]/filterBox:text-white duration-1000">
+                                @prp_7244
+                            </p>
+                        </div>
+
+
+                    </face>
+                </basis>
+            </div>
+            <div class="manshoorContainer mb-24 py-16 shadow-[4px_4px_15.6px_1px_#F1F1F1] w-90p mx-auto">
+                <basis core="callback" triggers="cms.dataFace" run="atclient"></basis>
+
+
+                <basis run="atclient" core="call" file="load-manshoor.inc?id={##cms.dataFace.value##}"
+                    triggers="cms.dataFace" />
+
+
+
+            </div>
+
+        </section>
+
+
+
+        <basis core="call" file="footer.inc" />
+
+    </main>
+
+    <script src="[##cms.cms.cdn##]/_js/basiscore-2.30.1.min.js"></script>
+    <basis core="call" file="scripts.inc" />
+    <script src="[##cms.cms.cdn##]/js/manshoor.js"></script>
+</body>
+
+</html>

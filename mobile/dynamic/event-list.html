@@ -1,0 +1,117 @@
+<basis core="dbsource" source="media" name="basisName" lid="1" catid="2287"> <member type="list" name="banner-desktop" perpage="10" pageno="1" /> </basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213215">
+
+    <member name="list-event" link="event.bc" size="350x178" propertyid="7244,7249" type="list"
+        postsql="select *, SUBSTR(prp_7244, 1,100-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 100)))) || '...' as substr from [db.list-event]" />
+
+
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لیست رویدادها</title>
+    <meta name="description" content="لیست رویدادهای مسجد همت تجریش">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+</head>
+
+<body>
+    <main class="eventList" dir="rtl">
+        <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
+        <basis core="call" file="side-content.inc" pageindex="[##cms.cms.pageindex##]"/>
+
+        <section class="section1">
+            <div class="imgS">
+                <basis core="print" datamembername="basisName.banner-desktop">
+                    <face>
+                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" class="w-full">
+                    </face>
+                </basis>
+            </div>
+        </section>
+
+        <div class="breadCrumb w-90p mx-auto mt-4">
+            <ul class="flex items-center py-5 gap-x-2.5">
+                <li class="flex items-center gap-x-2.5">
+                    <a href="/" class="flex items-center gap-x-4">
+                        <img class="w-[21px]" src="[##cms.cms.cdn##]/images/home.svg" alt="home">
+                        <span class="font-Kohinoor400 text-[10px] text-grayn">
+                            صفحه نخست
+                        </span>
+                    </a>
+                    <img src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="">
+                </li>
+                <li class="flex">
+                    <span class="font-Kohinoor400 text-[10px] text-grayn">
+                        رویدادها
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <section class="section2">
+            <div class="mainTitle mt-2 relative w-90p mx-auto">
+                <img class="mb-1 mx-auto" src="[##cms.cms.cdn##]/images/bgTitle-mobile.png" alt="background title">
+                <h1 class="text-center font-Kohinoor500 z-1 text-lg">
+                    رویدادها
+                </h1>
+            </div>
+
+            <div class="eventContainer mt-11 w-90p mx-auto">
+                <basis core="print" datamembername="db.list-event">
+                    <else-layout>
+                        <div class="para font-Kohinoor400 text-base">
+                            <p>
+                                متاسفانه هیچ رویدادی موجود نیست.
+                            </p>
+                        </div>
+                    </else-layout>
+                    <face>
+                        <div class="eventBox mb-9">
+                           <div class="imgS">
+                            <a href="/@link" title="@title">
+                                <img class="w-full" src="[##cms.cms.cdn##]/@00350X00178prp" alt="@title">
+                            </a>
+                            <div class="infos">
+                                <span class="block mt-3 font-IRANSansWebFaNum300 text-sm">
+                                @prp_7249
+                                </span>
+                                 <a href="/@link" title="@title">
+
+                                <h2 class="font-Kohinoor500 text-base mt-3">
+@title
+                                </h2>
+</a>
+                                <div class="para font-Kohinoor400 text-justify text-gray-matn mt-3">
+@substr
+                                </div>
+
+                                
+                                    <a href="/@link" class="flex mt-3 items-center gap-x-1 font-Kohinoor400 text-sm text-gold-pr" title="@title">
+                                        مشاهده 
+            
+                                        <img src="[##cms.cms.cdn##]/images/readMorev.svg" alt="@title">
+                                    </a>
+    
+                            </div>
+                           </div>
+                        </div>
+
+                    </face>
+                </basis>
+
+            </div>
+        </section>
+
+
+        <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+
+    </main>
+
+    <basis core="call" file="scripts.inc" pageindex="[##cms.cms.pageindex##]" />
+
+</body>
+
+</html>

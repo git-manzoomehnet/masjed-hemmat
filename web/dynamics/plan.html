@@ -1,0 +1,134 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213209"> <member name="plansList" type="list" typeid="159"/> </basis>	
+<basis core="dbsource" source="media" name="db" lid="1" catid="2271" > <member type="list" name="plansGallery" perpage="10" pageno="1" /> </basis>
+
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامه ها</title>
+    <meta name="description" content="برنامه های مسجد همت تجریش">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <basis core="call" file="styles.inc" />
+</head>
+<body>
+    <main class="plan" dir="rtl">
+        <basis core="call" file="header.inc" />
+        <basis core="call" file="side-content.inc" />
+
+        <section class="section1">
+            <div class="imgS  h-[690px]">
+                <img src="[##cms.cms.cdn##]/images/banner-plan.jpg" alt="@name" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <div class="breadCrumb w-90p mx-auto mt-4">
+            <ul class="flex items-center py-5 gap-x-2.5">
+                <li class="flex items-center gap-x-2.5">
+                    <a href="/" class="flex items-center gap-x-4">
+                        <img src="[##cms.cms.cdn##]/images/home.svg" alt="home">
+                        <span class="font-Kohinoor400 text-sm text-grayn">
+                            صفحه نخست
+                        </span>
+                    </a>
+                    <img src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="">
+                </li>
+                <li>
+                        <span class="font-Kohinoor400 text-sm text-grayn">
+                            برنامه ها
+                        </span>
+                </li>
+            </ul>
+        </div>
+
+        <section class="section2 mb-20 w-90p mx-auto">
+            <div class="flex mb-7 flex-wrap mt-16 gap-x-10 gap-y-7 w-90p mx-auto">
+
+                <basis core="print" datamembername="db.plansList">
+                   
+                    <face>
+                        <div data-topFace="@id" class="filterBox filterBtn w-[130px] group/filterBox p-4 rounded-2xl border border-gold-pr text-center cursor-pointer hover:bg-gold-pr [&.activeFilterBtn00]:bg-gold-pr duration-1000 ">
+                            <div class="imgS flex items-center justify-center">
+                                <img class="group-hover/filterBox:brightness-0 group-hover/filterBox:invert-100 group-[&.activeFilterBtn00]/filterBox:brightness-0 group-[&.activeFilterBtn00]/filterBox:invert-100 duration-1000 " src="[##cms.cms.cdn##]/@type_159" alt="@title">
+                            </div>
+                            <span class="block mt-4 font-Kohinoor500 text-sm text-gold-pr mb-1 group-hover/filterBox:text-white group-[&.activeFilterBtn00]/filterBox:text-white duration-1000">
+                               @title
+                            </span>
+                          
+                        </div>
+                        
+                    </face>
+                </basis>
+             
+            </div>
+
+
+            <div class="planContainer mt-1">
+
+                <basis run="atclient" core="call" file="load-plan.inc?id={##cms.dataFace.value##}"
+                triggers="cms.dataFace" />
+ 
+
+<basis core="callback" triggers="cms.dataFace" run="atclient"></basis>
+
+
+            </div>
+            
+        </section>
+
+
+        <basis core="print" datamembername="db.plansGallery">
+            <layout>
+               
+                <section class="section3 w-90p mx-auto mb-14">
+        
+                    <div class="title flex items-center gap-x-4 mb-2">
+                        <img src="[##cms.cms.cdn##]/images/titleIcon.svg" alt="topFaces">
+        
+                        <h2 class="font-Kohinoor600 text-lg">
+                            گالری عکس
+                                            </h2>
+                    </div>
+        
+        
+                    <div class="swiper tarhSlider relative !px-12">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                          <!-- Slides -->
+                       
+                          @child
+                        </div>
+                        <div class="nextTarh [&.swiper-button-disabled]:opacity-50 z-1 absolute left-0 top-[calc(50%-43px)] rotate-180 cursor-pointer">
+                          <img src="[##cms.cms.cdn##]/images/navGallery.svg" alt="navGallery">
+                        </div>
+                        <div class="prevTarh [&.swiper-button-disabled]:opacity-50 z-1 absolute right-0 top-[calc(50%-43px)] cursor-pointer">
+                          <img src="[##cms.cms.cdn##]/images/navGallery.svg" alt="navGallery">
+                        </div>
+                      
+                      </div>
+                      <div class="tarhPagination flex justify-center items-center mt-8">
+            
+                      </div>
+                </section>
+            </layout>
+           
+            <face>
+                <div class="swiper-slide">
+                            
+                    <div class="imgS">
+                        <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                    </div>
+                  </div>
+            </face>
+        </basis>
+        <basis core="call" file="footer.inc" />
+
+    </main>
+
+    <script src="[##cms.cms.cdn##]/_js/basiscore-2.30.1.min.js"></script>
+    <basis core="call" file="scripts.inc" />
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.6.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/plan.js"></script>
+</body>
+</html>
