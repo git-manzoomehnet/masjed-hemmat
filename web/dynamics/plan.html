@@ -1,5 +1,5 @@
-<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213209"> <member name="plansList" type="list" typeid="159"/> </basis>	
-<basis core="dbsource" source="media" name="db" lid="1" catid="2271" > <member type="list" name="plansGallery" perpage="10" pageno="1" /> </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="213209"> <member name="plansList" perpage="1000000" type="list" typeid="159"/> </basis>	
+<basis core="dbsource" source="media" name="db" lid="1" catid="2271" > <member type="list" name="plansGallery" perpage="1000000" pageno="1" /> </basis>
 
 
 <!DOCTYPE html>
@@ -14,6 +14,7 @@
 </head>
 <body>
     <main class="plan" dir="rtl">
+        <span class="planId" style="display: none;">[##cms.query.id##]</span>
         <basis core="call" file="header.inc" />
         <basis core="call" file="side-content.inc" />
 
@@ -32,12 +33,12 @@
                             صفحه نخست
                         </span>
                     </a>
-                    <img src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="">
+                    <img src="[##cms.cms.cdn##]/images/bread-seperator.svg" alt="seperator">
                 </li>
                 <li>
-                        <span class="font-Kohinoor400 text-sm text-grayn">
+                        <h1 class="font-Kohinoor400 text-sm text-grayn">
                             برنامه ها
-                        </span>
+                        </h1>
                 </li>
             </ul>
         </div>

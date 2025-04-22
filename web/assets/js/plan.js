@@ -21,7 +21,7 @@ function removeActive() {
 
 filterBtn[0].classList.add("activeFilterBtn")
 
-$bc.setSource("cms.dataFace", filterBtn[0].getAttribute("data-topFace"))
+// $bc.setSource("cms.dataFace", filterBtn[0].getAttribute("data-topFace"))
 
 filterBtn.forEach(element => {
     
@@ -56,3 +56,8 @@ const tarhSlider = new Swiper('.tarhSlider', {
 function renderTarh(params) {
         
 }
+let planId = document.querySelector(".planId").innerHTML
+window.addEventListener("DOMContentLoaded", () => {
+  $bc.setSource("cms.dataFace", planId)
+
+})
