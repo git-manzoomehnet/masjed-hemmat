@@ -19,7 +19,6 @@ function removeActive() {
     });
 }
 
-filterBtn[0].classList.add("activeFilterBtn")
 
 // $bc.setSource("cms.dataFace", filterBtn[0].getAttribute("data-topFace"))
 
@@ -59,5 +58,12 @@ function renderTarh(params) {
 let planId = document.querySelector(".planId").innerHTML
 window.addEventListener("DOMContentLoaded", () => {
   $bc.setSource("cms.dataFace", planId)
+  filterBtn.forEach(element => {
+    
+    if (element.getAttribute("data-topFace")==planId) {
+      
+      element.classList.add("activeFilterBtn")
+    }
+  });
 
 })
